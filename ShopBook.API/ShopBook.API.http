@@ -1,0 +1,6 @@
+@ShopBook.API_HostAddress = http://localhost:5208
+
+GET {{ShopBook.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

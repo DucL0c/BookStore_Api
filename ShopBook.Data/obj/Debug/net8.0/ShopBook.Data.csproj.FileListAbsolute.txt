@@ -1,0 +1,34 @@
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Data.deps.json
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Data.runtimeconfig.json
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Data.dll
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Data.pdb
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.csproj.AssemblyReference.cache
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.GeneratedMSBuildEditorConfig.editorconfig
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.AssemblyInfoInputs.cache
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.AssemblyInfo.cs
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.csproj.CoreCompileInputs.cache
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.dll
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\refint\ShopBook.Data.dll
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.pdb
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.genruntimeconfig.cache
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ref\ShopBook.Data.dll
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Common.dll
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Common.pdb
+F:\Các Project\ShopBook\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.76296865.Up2Date
+D:\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Data.deps.json
+D:\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Data.runtimeconfig.json
+D:\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Data.dll
+D:\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Data.pdb
+D:\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Common.dll
+D:\ShopBook\ShopBook.Data\bin\Debug\net8.0\ShopBook.Common.pdb
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.csproj.AssemblyReference.cache
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.AssemblyInfoInputs.cache
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.AssemblyInfo.cs
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.csproj.CoreCompileInputs.cache
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.76296865.Up2Date
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.dll
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\refint\ShopBook.Data.dll
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.pdb
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ShopBook.Data.genruntimeconfig.cache
+D:\ShopBook\ShopBook.Data\obj\Debug\net8.0\ref\ShopBook.Data.dll

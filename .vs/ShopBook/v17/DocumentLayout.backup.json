@@ -1,0 +1,905 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ShopBook\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\infrastructure\\extentsions\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\infrastructure\\extentsions\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\cartviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\cartviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\bookstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\bookstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\orderitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\orderitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\orderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\orderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\orderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\orderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\orderitemviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\orderitemviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\booksellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\booksellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\orderviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\orderviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\productreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\productreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\productreviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\productreviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\productreviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\productreviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\productreviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\productreviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\productreviewviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\productreviewviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\bookspecificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\bookspecificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\bookspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\bookspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\bookspecificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\bookspecificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\booksellerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\booksellerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\bookspecificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\bookspecificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\booksellerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\booksellerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\bookauthorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\bookauthorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\authorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\authorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\bookimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\bookimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\bookseller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\bookseller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\bookspecificationviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\bookspecificationviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\sellerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\sellerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\categoryviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\categoryviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\authorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\authorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\repositories\\sellerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\repositories\\sellerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\sellerviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\sellerviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\seller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\seller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\bookauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\bookauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\models\\bookimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\models\\bookimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|d:\\shopbook\\shopbook.api\\controllers\\bookauthorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E19790B5-06D8-4B57-97DD-173883EC5C5A}|ShopBook.API\\ShopBook.API.csproj|solutionrelative:shopbook.api\\controllers\\bookauthorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\bookauthorviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\bookauthorviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|d:\\shopbook\\shopbook.data\\viewmodels\\authorviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E71E9F5-DCA8-4E33-AFF3-EBDEF02589D5}|ShopBook.Data\\ShopBook.Data.csproj|solutionrelative:shopbook.data\\viewmodels\\authorviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|d:\\shopbook\\shopbook.service\\bookauthorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C1B296-FF94-449D-A746-84D3523752A5}|ShopBook.Service\\ShopBook.Service.csproj|solutionrelative:shopbook.service\\bookauthorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\CartRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\CartRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\CartRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\CartRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:54:54.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\CartViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\CartViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\CartViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\CartViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:52:53.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderItemController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\OrderItemController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\OrderItemController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\OrderItemController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\OrderItemController.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAgwL4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:26:54.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderItemService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\OrderItemService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\OrderItemService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\OrderItemService.cs",
+              "RelativeToolTip": "ShopBook.Service\\OrderItemService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAADkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:24:22.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\BookController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\BookController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\BookController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:19:50.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderItemRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\OrderItemRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\OrderItemRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\OrderItemRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\OrderItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:10:05.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OrderItemViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\OrderItemViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\OrderItemViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\OrderItemViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\OrderItemViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:08:08.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\OrderItem.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\OrderItem.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T08:30:54.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAqwFEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T08:45:28.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\OrderService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\OrderService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\OrderService.cs",
+              "RelativeToolTip": "ShopBook.Service\\OrderService.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwCUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T08:43:01.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\OrderRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAawCYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T08:37:12.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OrderViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\OrderViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\OrderViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\OrderViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\OrderViewModels.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T08:32:11.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\CartItem.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\CartItem.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T08:30:42.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ProductReviewController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\ProductReviewController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\ProductReviewController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\ProductReviewController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\ProductReviewController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwGgAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T08:13:42.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProductReviewService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\ProductReviewService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\ProductReviewService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\ProductReviewService.cs",
+              "RelativeToolTip": "ShopBook.Service\\ProductReviewService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:50:05.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ProductReviewRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\ProductReviewRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\ProductReviewRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\ProductReviewRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\ProductReviewRepository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:47:15.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ProductReviewViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\ProductReviewViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\ProductReviewViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\ProductReviewViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\ProductReviewViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:46:37.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ProductReview.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\ProductReview.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\ProductReview.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\ProductReview.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\ProductReview.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:43:39.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BookSpecificationController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\BookSpecificationController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\BookSpecificationController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\BookSpecificationController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\BookSpecificationController.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAmwJUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:36:24.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "BookSpecificationService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\BookSpecificationService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\BookSpecificationService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\BookSpecificationService.cs",
+              "RelativeToolTip": "ShopBook.Service\\BookSpecificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:33:57.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "AuthorRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\AuthorRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\AuthorRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\AuthorRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\AuthorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:33:12.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\BookRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\BookRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:33:08.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "BookImageRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookImageRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\BookImageRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookImageRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\BookImageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:33:06.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "BookSeller.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\BookSeller.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\BookSeller.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\BookSeller.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\BookSeller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:28:47.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "BookSpecificationRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookSpecificationRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\BookSpecificationRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookSpecificationRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\BookSpecificationRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:26:51.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "BookSpecification.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\BookSpecification.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\BookSpecification.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\BookSpecification.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\BookSpecification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:24:33.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "BookSpecificationViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\BookSpecificationViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\BookSpecificationViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\BookSpecificationViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\BookSpecificationViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:24:24.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAA8wLwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:17:17.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\CategoryService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\CategoryService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\CategoryService.cs",
+              "RelativeToolTip": "ShopBook.Service\\CategoryService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwDQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:15:00.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:13:58.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "CategoryViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\CategoryViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\CategoryViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\CategoryViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\CategoryViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:12:08.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "AuthorController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\AuthorController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\AuthorController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\AuthorController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\AuthorController.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAmwLwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:01:23.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SellerController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\SellerController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\SellerController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\SellerController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\SellerController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAkwKsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:01:12.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "AuthorService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\AuthorService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\AuthorService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\AuthorService.cs",
+              "RelativeToolTip": "ShopBook.Service\\AuthorService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwDAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T04:13:10.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "SellerService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\SellerService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\SellerService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\SellerService.cs",
+              "RelativeToolTip": "ShopBook.Service\\SellerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T06:56:30.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "SellerRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\SellerRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\SellerRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\SellerRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\SellerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T06:55:01.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "SellerViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\SellerViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\SellerViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\SellerViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\SellerViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T06:51:31.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Infrastructure\\Extentsions\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Infrastructure\\Extentsions\\MappingProfile.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Infrastructure\\Extentsions\\MappingProfile.cs",
+              "RelativeToolTip": "ShopBook.API\\Infrastructure\\Extentsions\\MappingProfile.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:57:35.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Seller.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\Seller.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\Seller.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\Seller.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\Seller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:52:42.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "BookImage.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\BookImage.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\BookImage.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\BookImage.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\BookImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:51:21.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\Cart.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\Cart.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\Cart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:51:07.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\Category.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\Category.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:51:06.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\Order.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\Order.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:51:04.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "BookAuthorViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\BookAuthorViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\BookAuthorViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\BookAuthorViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\BookAuthorViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:41:05.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "AuthorViewModels.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\AuthorViewModels.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\ViewModels\\AuthorViewModels.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\ViewModels\\AuthorViewModels.cs",
+              "RelativeToolTip": "ShopBook.Data\\ViewModels\\AuthorViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:18:44.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BookSellerController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\BookSellerController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\BookSellerController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\BookSellerController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\BookSellerController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:12:53.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "BookAuthorController.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.API\\Controllers\\BookAuthorController.cs",
+              "RelativeDocumentMoniker": "ShopBook.API\\Controllers\\BookAuthorController.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.API\\Controllers\\BookAuthorController.cs",
+              "RelativeToolTip": "ShopBook.API\\Controllers\\BookAuthorController.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAuwKgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:12:45.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "BookSellerService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\BookSellerService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\BookSellerService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\BookSellerService.cs",
+              "RelativeToolTip": "ShopBook.Service\\BookSellerService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:07:52.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "BookAuthorService.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Service\\BookAuthorService.cs",
+              "RelativeDocumentMoniker": "ShopBook.Service\\BookAuthorService.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Service\\BookAuthorService.cs",
+              "RelativeToolTip": "ShopBook.Service\\BookAuthorService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:07:33.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BookSellerRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookSellerRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\BookSellerRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookSellerRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\BookSellerRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:05:04.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "BookAuthorRepository.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookAuthorRepository.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Repositories\\BookAuthorRepository.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Repositories\\BookAuthorRepository.cs",
+              "RelativeToolTip": "ShopBook.Data\\Repositories\\BookAuthorRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:04:16.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookstoreContext.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\BookstoreContext.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\BookstoreContext.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\BookstoreContext.cs",
+              "RelativeToolTip": "ShopBook.Data\\BookstoreContext.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAnwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:54:02.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\Book.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\Book.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:52:04.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Author.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\Author.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\Author.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\Author.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\Author.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:52:02.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "BookAuthor.cs",
+              "DocumentMoniker": "D:\\ShopBook\\ShopBook.Data\\Models\\BookAuthor.cs",
+              "RelativeDocumentMoniker": "ShopBook.Data\\Models\\BookAuthor.cs",
+              "ToolTip": "D:\\ShopBook\\ShopBook.Data\\Models\\BookAuthor.cs",
+              "RelativeToolTip": "ShopBook.Data\\Models\\BookAuthor.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAnwBMAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:50:55.759Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

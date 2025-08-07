@@ -1,0 +1,22 @@
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\bin\Debug\net8.0\ShopBook.Common.deps.json
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\bin\Debug\net8.0\ShopBook.Common.dll
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\bin\Debug\net8.0\ShopBook.Common.pdb
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.GeneratedMSBuildEditorConfig.editorconfig
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.AssemblyInfoInputs.cache
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.AssemblyInfo.cs
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.csproj.CoreCompileInputs.cache
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.dll
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\obj\Debug\net8.0\refint\ShopBook.Common.dll
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.pdb
+F:\Các Project\ShopBook\ShopBook\ShopBook.Common\obj\Debug\net8.0\ref\ShopBook.Common.dll
+D:\ShopBook\ShopBook.Common\bin\Debug\net8.0\ShopBook.Common.deps.json
+D:\ShopBook\ShopBook.Common\bin\Debug\net8.0\ShopBook.Common.dll
+D:\ShopBook\ShopBook.Common\bin\Debug\net8.0\ShopBook.Common.pdb
+D:\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.AssemblyInfoInputs.cache
+D:\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.AssemblyInfo.cs
+D:\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.csproj.CoreCompileInputs.cache
+D:\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.dll
+D:\ShopBook\ShopBook.Common\obj\Debug\net8.0\refint\ShopBook.Common.dll
+D:\ShopBook\ShopBook.Common\obj\Debug\net8.0\ShopBook.Common.pdb
+D:\ShopBook\ShopBook.Common\obj\Debug\net8.0\ref\ShopBook.Common.dll
