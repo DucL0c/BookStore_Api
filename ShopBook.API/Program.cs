@@ -1,7 +1,9 @@
 ﻿using Autofac;
+using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ShopBook.API.Infrastructure.Extentsions;
 using ShopBook.Data;
 using ShopBook.Data.Repositories;
@@ -12,6 +14,11 @@ var builder = WebApplication.CreateBuilder(args);
 // 1. Đăng ký DbContext với DI container mặc định
 builder.Services.AddDbContext<BookstoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//builder.Services.AddDbContext<BookstoreContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+//        sqlServerOptions => sqlServerOptions.EnableRetryOnFailure())
+//);
 
 // 2. Cấu hình Autofac
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
