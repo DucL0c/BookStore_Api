@@ -10,14 +10,14 @@ namespace ShopBook.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderController : ControllerBase
+    public class CartItemController : ControllerBase
     {
         #region Intialize
-        private readonly IOrderService _orderService;
+        private readonly ICartItemService _cartItemService;
         private readonly IMapper _mapper;
-        public OrderController(IOrderService orderService, IMapper mapper)
+        public CartItemController(ICartItemService cartItemService, IMapper mapper)
         {
-            _orderService = orderService;
+            _cartItemService = cartItemService;
             _mapper = mapper;
         }
         #endregion Intialize
@@ -32,12 +32,12 @@ namespace ShopBook.API.Controllers
         {
             try
             {
-                var orders = await _orderService.GetAllAsync();
-                return Ok(orders); // Trả về danh sách carts dạng JSON
+                var cartItems = await _cartItemService.GetAllAsync();
+                return Ok(cartItems); // Trả về danh sách cartItems dạng JSON
             }
             catch (Exception ex)
             {
-                // Ghi log nếu cần: _logger.LogError(ex, "Error occurred while getting carts.");
+                // Ghi log nếu cần: _logger.LogError(ex, "Error occurred while getting cartItems.");
                 return StatusCode(500, new { message = "Đã xảy ra lỗi khi lấy danh sách giỏ hàng.", error = ex.Message });
             }
         }
@@ -55,16 +55,16 @@ namespace ShopBook.API.Controllers
         {
             try
             {
-                var model = await _orderService.GetAllAsyncByKeyWord(keyword);
+                var model = await _cartItemService.GetAllByKeyWord(keyword);
                 int totalRow = model.Count();
 
                 var data = model
-                    .OrderByDescending(x => x.OrderId)
+                    .OrderByDescending(x => x.CartId)
                     .Skip(page * pageSize)
                     .Take(pageSize)
-                    .ToList(); // Trả thẳng Order
+                    .ToList(); 
 
-                var paging = new PaginationSet<Order>
+                var paging = new PaginationSet<CartItem>
                 {
                     Items = data,
                     Page = page,
@@ -80,6 +80,7 @@ namespace ShopBook.API.Controllers
             }
         }
 
+
         /// <summary>
         /// lấy theo id
         /// </summary>
@@ -88,7 +89,7 @@ namespace ShopBook.API.Controllers
         [HttpGet("byId/{Id}")]
         public async Task<IActionResult> GetById(int Id)
         {
-            var result = await _orderService.GetById(Id);
+            var result = await _cartItemService.GetById(Id);
 
             if (result == null || result.Count == 0)
             {
@@ -99,18 +100,36 @@ namespace ShopBook.API.Controllers
         }
 
         /// <summary>
-        /// lấy theo UserId
+        /// lấy theo bookId
         /// </summary>
-        /// <param name="userId"></param>
+        /// <param name="bookId"></param>
         /// <returns></returns>
-        [HttpGet("byUserId/{userId}")]
-        public async Task<IActionResult> GetByUserId(int userId)
+        [HttpGet("byUserId/{bookId}")]
+        public async Task<IActionResult> GetByBookId(int bookId)
         {
-            var result = await _orderService.GetByUserIdAsync(userId);
+            var result = await _cartItemService.GetByBookAsync(bookId);
 
             if (result == null || result.Count == 0)
             {
-                return NotFound(new { message = "Không tìm thấy bản ghi nào của userId đã cho." });
+                return NotFound(new { message = "Không tìm thấy bản ghi nào của BookId đã cho." });
+            }
+
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// lấy theo cartId
+        /// </summary>
+        /// <param name="cartId"></param>
+        /// <returns></returns>
+        [HttpGet("byCartId/{cartId}")]
+        public async Task<IActionResult> GetByCartId(int cartId)
+        {
+            var result = await _cartItemService.GetByCartIdAsync(cartId);
+
+            if (result == null || result.Count == 0)
+            {
+                return NotFound(new { message = "Không tìm thấy bản ghi nào của cartId đã cho." });
             }
 
             return Ok(result);
@@ -122,15 +141,15 @@ namespace ShopBook.API.Controllers
         /// <param name="seller"></param>
         /// <returns></returns>
         [HttpPost("create")]
-        public async Task<IActionResult> Create(OrderViewModels order)
+        public async Task<IActionResult> Create(CartItemViewModels cartItem)
         {
             if (ModelState.IsValid)
             {
-                Order us = _mapper.Map<OrderViewModels, Order>(order);
+                CartItem us = _mapper.Map<CartItemViewModels, CartItem>(cartItem);
                 try
                 {
-                    _ = await _orderService.Add(us);
-                    return CreatedAtAction(nameof(Create), new { id = us.OrderId }, us);
+                    _ = await _cartItemService.Add(us);
+                    return CreatedAtAction(nameof(Create), new { id = us.CartItemId }, us);
                 }
                 catch (Exception ex)
                 {
@@ -149,15 +168,15 @@ namespace ShopBook.API.Controllers
         /// <param name="seller"></param>
         /// <returns></returns>
         [HttpPut("Update")]
-        public async Task<IActionResult> Update(OrderViewModels order)
+        public async Task<IActionResult> Update(CartItemViewModels cartItem)
         {
             if (ModelState.IsValid)
             {
-                Order mapping = _mapper.Map<OrderViewModels, Order>(order);
+                CartItem mapping = _mapper.Map<CartItemViewModels, CartItem>(cartItem);
                 try
                 {
-                    _ = await _orderService.Update(mapping);
-                    return CreatedAtAction(nameof(Update), new { id = mapping.OrderId }, mapping);
+                    _ = await _cartItemService.Update(mapping);
+                    return CreatedAtAction(nameof(Update), new { id = mapping.CartItemId }, mapping);
                 }
                 catch (Exception ex)
                 {
@@ -180,7 +199,7 @@ namespace ShopBook.API.Controllers
         {
             try
             {
-                Order result = await _orderService.Delete(id);
+                CartItem result = await _cartItemService.Delete(id);
 
                 // Kiểm tra nếu không tìm thấy tác giả
                 if (result == null)
@@ -188,7 +207,7 @@ namespace ShopBook.API.Controllers
                     return NotFound(new { message = "Không tìm thấy với ID đã cho." });
                 }
 
-                OrderViewModels responseData = _mapper.Map<Order, OrderViewModels>(result);
+                CartItemViewModels responseData = _mapper.Map<CartItem, CartItemViewModels>(result);
                 return Ok(responseData);
             }
             catch (Exception ex)

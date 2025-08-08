@@ -32,6 +32,10 @@ namespace ShopBook.API.Infrastructure.Extentsions
             .ReverseMap();
             CreateMap<Cart, CartViewModels>()
             .ReverseMap();
+            CreateMap<CartItem, CartItemViewModels>()
+            .ReverseMap();
+            CreateMap<Book, BookViewModels>()
+            .ReverseMap();
         }
     }
 }

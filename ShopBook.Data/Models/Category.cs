@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace ShopBook.Data.Models;
 
@@ -11,5 +12,6 @@ public partial class Category
 
     public bool? IsLeaf { get; set; }
 
-    public virtual ICollection<Book> Books { get; set; } = new List<Book>();
+    [JsonIgnore] // Ngăn EF trả về danh sách sách bên trong category
+    public ICollection<Book> Books { get; set; }
 }

@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopBook.Data.Mapping_Models
+namespace ShopBook.Data.ViewModels
 {
-    public class QuantitySoldModel
-    {
-        public int? Value { get; set; }
-        public string Text { get; set; }
-    }
-    public class BookMapping
+    public class BookViewModels
     {
         public int BookId { get; set; }
 
@@ -27,9 +23,8 @@ namespace ShopBook.Data.Mapping_Models
 
         public decimal? ListPrice { get; set; }
 
-        public QuantitySoldModel QuantitySold { get; set; }  // Object gồm value + text
+        public int? QuantitySold { get; set; }
 
         public int? CategoryId { get; set; }
     }
-
 }

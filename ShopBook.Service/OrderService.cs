@@ -12,7 +12,8 @@ namespace ShopBook.Service
     {
         Task<List<Order>> GetById(int Id);
         Task<List<Order>> GetByUserIdAsync(int userId);
-        Task<List<Order>> GetAllAsync(string keyWord);
+        Task<List<Order>> GetAllAsyncByKeyWord(string keyWord);
+        Task<List<Order>> GetAllAsync();
         Task<Order> Add(Order order);
         Task<Order> Update(Order order);
         Task<Order> Delete(int id);
@@ -33,9 +34,9 @@ namespace ShopBook.Service
         {
             return await _orderRepository.DeleteAsync(id);
         }
-        public async Task<List<Order>> GetAllAsync(string keyWord)
+        public async Task<List<Order>> GetAllAsyncByKeyWord(string keyWord)
         {
-            return await _orderRepository.GetAllAsync(keyWord);
+            return await _orderRepository.GetAllAsyncByKeyWord(keyWord);
         }
         public async Task<List<Order>> GetById(int Id)
         {
@@ -48,6 +49,10 @@ namespace ShopBook.Service
         public async Task<Order> Update(Order order)
         {
             return await _orderRepository.UpdateASync(order);
+        }
+        public async Task<List<Order>> GetAllAsync()
+        {
+            return await _orderRepository.GetAllAsync();
         }
     }
 }

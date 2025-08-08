@@ -13,8 +13,9 @@ namespace ShopBook.Data.Repositories
     {
         Task<List<Order>> GetById(int Id);
         Task<List<Order>> GetByUserIdAsync(int userId);
-        Task<List<Order>> GetAllAsync(string keyWord);
-    } 
+        Task<List<Order>> GetAllAsyncByKeyWord(string keyWord);
+        Task<List<Order>> GetAllAsync();
+    }
     public class OrderRepository : RepositoryBase<Order>, IOrderRepository
     {
         private readonly BookstoreContext _context;
@@ -22,11 +23,12 @@ namespace ShopBook.Data.Repositories
         {
             _context = context;
         }
-        public async Task<List<Order>> GetAllAsync(string keyword)
+        public async Task<List<Order>> GetAllAsyncByKeyWord(string keyword)
         {
             var query = _context.Orders
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
+                .ThenInclude(o=>o.Book)//book trong OrderItems
                 .AsQueryable();
 
             if (!string.IsNullOrEmpty(keyword))
@@ -45,6 +47,7 @@ namespace ShopBook.Data.Repositories
                 .Where(o => o.UserId == userId)
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
+                .ThenInclude(o => o.Book)//book trong OrderItems
                 .ToListAsync();
         }
         public async Task<List<Order>> GetById(int Id)
@@ -53,6 +56,16 @@ namespace ShopBook.Data.Repositories
                 .Where(o => o.OrderId == Id)
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
+                .ThenInclude(o => o.Book)//book trong OrderItems
+                .ToListAsync();
+        }
+
+        public async Task<List<Order>> GetAllAsync()
+        {
+            return await _context.Orders
+                .Include(o => o.User)
+                .Include(o => o.OrderItems)
+                .ThenInclude(o => o.Book)//book trong OrderItems
                 .ToListAsync();
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopBook.Data.Models;
 
@@ -20,6 +21,9 @@ public partial class Book
     public decimal? ListPrice { get; set; }
 
     public int? QuantitySold { get; set; }
+
+    [NotMapped]
+    public string? QuantitySoldText { get; set; } // Không lưu DB
 
     public int? CategoryId { get; set; }
 

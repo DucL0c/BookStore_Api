@@ -1,16 +1,17 @@
-﻿using ShopBook.Data.Mapping_Models;
+﻿using ShopBook.Data.Dto;
+using ShopBook.Data.Models;
 using ShopBook.Data.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopBook.Service
 {
-    public interface IBookService 
+    public interface IBookService
     {
-        Task<List<BookMapping>> GetAllBookMapping(string keyWord);
+        Task<List<BookDto>> GetAllByKeyWord(string keyWord);
+        Task<List<BookDto>> GetAll();
+        Task<BookDto?> GetBookByIdAsync(int bookId);
+        Task<Book> Add(Book book);
+        Task<Book> Update(Book book);
+        Task<Book> Delete(int id);
     }
     public class BookService : IBookService
     {
@@ -19,10 +20,34 @@ namespace ShopBook.Service
         {
             _bookRepository = bookRepository;
         }
-
-        public async Task<List<BookMapping>> GetAllBookMapping(string keyWord)
+        public async Task<Book> Add(Book book)
         {
-            return await _bookRepository.GetAllBookMapping(keyWord);
+            return await _bookRepository.AddASync(book);
+        }
+        public async Task<Book> Delete(int id)
+        {
+            return await _bookRepository.DeleteAsync(id);
+        }
+
+        public async Task<List<BookDto>> GetAll()
+        {
+            return await _bookRepository.GetAll();
+        }
+
+        public async Task<List<BookDto>> GetAllByKeyWord(string keyWord)
+        {
+            return await _bookRepository.GetAllByKeyWord(keyWord);
+        }
+
+        public async Task<BookDto?> GetBookByIdAsync(int bookId)
+        {
+           return await _bookRepository.GetBookByIdAsync(bookId);
+        }
+
+        public async Task<Book> Update(Book book)
+        {
+            return await _bookRepository.UpdateASync(book);
         }
     }
+
 }
