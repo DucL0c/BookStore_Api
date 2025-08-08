@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopBook.API.Infrastructure.Core;
@@ -10,6 +11,7 @@ namespace ShopBook.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class OrderItemController : ControllerBase
     {
         #region Intialize
@@ -31,6 +33,8 @@ namespace ShopBook.API.Controllers
         /// <param name="keyword"></param>
         /// <returns></returns>
         [HttpGet("getallbypaging")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> GetAllByPaging(int page = 0, int pageSize = 100, string? keyword = null)
         {
             try
@@ -66,6 +70,8 @@ namespace ShopBook.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpGet("byId/{Id}")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> GetById(int Id)
         {
             var result = await _orderItemService.GetById(Id);
@@ -84,6 +90,8 @@ namespace ShopBook.API.Controllers
         /// <param name="bookId"></param>
         /// <returns></returns>
         [HttpGet("byBookId/{bookId}")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> GetByBookId(int bookId)
         {
             var result = await _orderItemService.GetByBookIdAsync(bookId);
@@ -102,6 +110,8 @@ namespace ShopBook.API.Controllers
         /// <param name="orderId"></param>
         /// <returns></returns>
         [HttpGet("byOrderId/{orderId}")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> GetByOrderId(int orderId)
         {
             var result = await _orderItemService.GetByOrderIdAsync(orderId);
@@ -120,6 +130,8 @@ namespace ShopBook.API.Controllers
         /// <param name="seller"></param>
         /// <returns></returns>
         [HttpPost("create")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> Create(OrderItemViewModels orderItem)
         {
             if (ModelState.IsValid)
@@ -147,6 +159,8 @@ namespace ShopBook.API.Controllers
         /// <param name="seller"></param>
         /// <returns></returns>
         [HttpPut("Update")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> Update(OrderItemViewModels orderItem)
         {
             if (ModelState.IsValid)
@@ -174,6 +188,8 @@ namespace ShopBook.API.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("delete/{id}")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> Delete(int id)
         {
             try

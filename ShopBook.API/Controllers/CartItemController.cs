@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopBook.API.Infrastructure.Core;
@@ -10,6 +11,7 @@ namespace ShopBook.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CartItemController : ControllerBase
     {
         #region Intialize
@@ -28,6 +30,7 @@ namespace ShopBook.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("getall")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -51,6 +54,7 @@ namespace ShopBook.API.Controllers
         /// <param name="keyword"></param>
         /// <returns></returns>
         [HttpGet("getallbypaging")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> GetAllByPaging(int page = 0, int pageSize = 100, string? keyword = null)
         {
             try
@@ -87,6 +91,7 @@ namespace ShopBook.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpGet("byId/{Id}")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> GetById(int Id)
         {
             var result = await _cartItemService.GetById(Id);
@@ -105,6 +110,8 @@ namespace ShopBook.API.Controllers
         /// <param name="bookId"></param>
         /// <returns></returns>
         [HttpGet("byUserId/{bookId}")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> GetByBookId(int bookId)
         {
             var result = await _cartItemService.GetByBookAsync(bookId);
@@ -123,6 +130,8 @@ namespace ShopBook.API.Controllers
         /// <param name="cartId"></param>
         /// <returns></returns>
         [HttpGet("byCartId/{cartId}")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> GetByCartId(int cartId)
         {
             var result = await _cartItemService.GetByCartIdAsync(cartId);
@@ -141,6 +150,8 @@ namespace ShopBook.API.Controllers
         /// <param name="seller"></param>
         /// <returns></returns>
         [HttpPost("create")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> Create(CartItemViewModels cartItem)
         {
             if (ModelState.IsValid)
@@ -168,6 +179,8 @@ namespace ShopBook.API.Controllers
         /// <param name="seller"></param>
         /// <returns></returns>
         [HttpPut("Update")]
+        [Authorize(Roles = "user,admin")]
+
         public async Task<IActionResult> Update(CartItemViewModels cartItem)
         {
             if (ModelState.IsValid)
@@ -195,6 +208,7 @@ namespace ShopBook.API.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("delete/{id}")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> Delete(int id)
         {
             try

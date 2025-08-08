@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using ShopBook.Data.Dto;
 using ShopBook.Data.Models;
 using ShopBook.Data.ViewModels;
+using ShopBook.Model.Dtos;
 
 namespace ShopBook.API.Infrastructure.Extentsions
 {
@@ -8,6 +10,8 @@ namespace ShopBook.API.Infrastructure.Extentsions
     {
         public MappingProfile()
         {
+            CreateMap<User, RegisterDto>().ReverseMap();
+            CreateMap<User, UserDto>();
             CreateMap<User, UserViewModels>()
              .ReverseMap();
             CreateMap<Author, AuthorViewModels>()

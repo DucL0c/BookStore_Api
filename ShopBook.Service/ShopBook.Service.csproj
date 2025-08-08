@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ShopBook.Common\ShopBook.Common.csproj" />
     <ProjectReference Include="..\ShopBook.Data\ShopBook.Data.csproj" />
   </ItemGroup>

@@ -12,6 +12,7 @@ namespace ShopBook.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         #region Intialize
@@ -30,6 +31,7 @@ namespace ShopBook.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("getall")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -53,6 +55,7 @@ namespace ShopBook.API.Controllers
         /// <param name="keyword"></param>
         /// <returns></returns>
         [HttpGet("getallbypaging")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> GetAllByPaging(int page = 0, int pageSize = 100, string? keyword = null)
         {
             try
@@ -85,6 +88,7 @@ namespace ShopBook.API.Controllers
         /// <param name="id">Id người dùng</param>
         /// <returns>Thông tin người dùng hoặc lỗi</returns>
         [HttpGet("getbyid/{id}")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> GetById(int id)
         {
             try
@@ -114,12 +118,14 @@ namespace ShopBook.API.Controllers
         /// <param name="user"></param>
         /// <returns></returns>
         [HttpPost("create")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> Create(UserViewModels user)
         {
             if (ModelState.IsValid)
             {
                 User us = _mapper.Map<UserViewModels, User>(user);
                 us.CreatedAt = DateTime.Now;
+                us.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
                 try
                 {
                     _ = await _usersService.Add(us);
@@ -142,11 +148,13 @@ namespace ShopBook.API.Controllers
         /// <param name="user"></param>
         /// <returns></returns>
         [HttpPut("Update")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> Update(UserViewModels user)
         {
             if (ModelState.IsValid)
             {
                 User mapping = _mapper.Map<UserViewModels, User>(user);
+                mapping.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
                 try
                 {
                     _ = await _usersService.Update(mapping);
@@ -169,6 +177,7 @@ namespace ShopBook.API.Controllers
         /// <param name="id">ID người dùng</param>
         /// <returns>Kết quả xóa</returns>
         [HttpDelete("delete/{id}")]
+        [Authorize(Roles = "user,admin")]
         public async Task<IActionResult> Delete(int id)
         {
             try

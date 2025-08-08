@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopBook.Data.Models;
@@ -9,6 +10,7 @@ namespace ShopBook.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductReviewController : ControllerBase
     {
         #region Intialize
@@ -27,6 +29,8 @@ namespace ShopBook.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("getall")]
+        [Authorize(Roles = "user")]
+
         public async Task<IActionResult> GetAll()
         {
             var result = await _productReviewService.GetAllAsync();
@@ -43,6 +47,8 @@ namespace ShopBook.API.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpGet("byId/{Id}")]
+        [Authorize(Roles = "user")]
+
         public async Task<IActionResult> GetById(int Id)
         {
             var result = await _productReviewService.GetById(Id);
@@ -61,6 +67,8 @@ namespace ShopBook.API.Controllers
         /// <param name="bookId"></param>
         /// <returns></returns>
         [HttpGet("bybook/{bookId}")]
+        [Authorize(Roles = "user")]
+
         public async Task<IActionResult> GetByBookId(int bookId)
         {
             var result = await _productReviewService.GetByBookIdAsync(bookId);
@@ -79,6 +87,8 @@ namespace ShopBook.API.Controllers
         /// <param name="userId"></param>
         /// <returns></returns>
         [HttpGet("byseller/{userId}")]
+        [Authorize(Roles = "user")]
+
         public async Task<IActionResult> GetBySellerId(int userId)
         {
             var result = await _productReviewService.GetByUserIdAsync(userId);
@@ -98,6 +108,8 @@ namespace ShopBook.API.Controllers
         /// <param name="author"></param>
         /// <returns></returns>
         [HttpPost("create")]
+        [Authorize(Roles = "user")]
+
         public async Task<IActionResult> Create(ProductReviewViewModels productReview)
         {
             if (ModelState.IsValid)
@@ -126,6 +138,8 @@ namespace ShopBook.API.Controllers
         /// <param name="user"></param>
         /// <returns></returns>
         [HttpPut("Update")]
+        [Authorize(Roles = "user")]
+
         public async Task<IActionResult> Update(ProductReviewViewModels productReview)
         {
             if (ModelState.IsValid)
@@ -153,6 +167,8 @@ namespace ShopBook.API.Controllers
         /// <param name="id">ID của tác giả</param>
         /// <returns>Kết quả xóa tác giả</returns>
         [HttpDelete("delete/{id}")]
+        [Authorize(Roles = "user")]
+
         public async Task<IActionResult> Delete(int id)
         {
             try
