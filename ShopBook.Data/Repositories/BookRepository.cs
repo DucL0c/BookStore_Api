@@ -7,7 +7,7 @@ namespace ShopBook.Data.Repositories
 {
     public interface IBookRepository : IRepository<Book>
     {
-        Task<List<BookDto>> GetAllByKeyWord(string keyWord);
+        Task<List<BookDto>> GetAllByKeyWord(string keyWord, int? categoryId);
         Task<List<BookDto>> GetAll();
         Task<BookDto?> GetBookByIdAsync(int bookId);
     }
@@ -129,14 +129,16 @@ namespace ShopBook.Data.Repositories
             }).ToList();
         }
 
-        public async Task<List<BookDto>> GetAllByKeyWord(string keyWord)
+        public async Task<List<BookDto>> GetAllByKeyWord(string keyWord, int? categoryId)
         {
             var books = await _context.Books
                 .Where(b =>
-                    string.IsNullOrEmpty(keyWord) ||
-                    b.Name.Contains(keyWord) ||
-                    b.Description.Contains(keyWord) ||
-                    b.ShortDescription.Contains(keyWord)
+                    (string.IsNullOrEmpty(keyWord) ||
+                     b.Name.Contains(keyWord) ||
+                     b.Description.Contains(keyWord) ||
+                     b.ShortDescription.Contains(keyWord))
+                    &&
+                    (!categoryId.HasValue || b.CategoryId == categoryId.Value)
                 )
                 .Include(b => b.BookAuthors).ThenInclude(ba => ba.Author)
                 .Include(b => b.BookSpecifications)
@@ -243,6 +245,7 @@ namespace ShopBook.Data.Repositories
                 };
             }).ToList();
         }
+
 
         public async Task<BookDto?> GetBookByIdAsync(int bookId)
         {

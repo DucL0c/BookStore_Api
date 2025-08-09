@@ -6,7 +6,7 @@ namespace ShopBook.Service
 {
     public interface IBookService
     {
-        Task<List<BookDto>> GetAllByKeyWord(string keyWord);
+        Task<List<BookDto>> GetAllByKeyWord(string keyWord, int? categoryId);
         Task<List<BookDto>> GetAll();
         Task<BookDto?> GetBookByIdAsync(int bookId);
         Task<Book> Add(Book book);
@@ -34,9 +34,9 @@ namespace ShopBook.Service
             return await _bookRepository.GetAll();
         }
 
-        public async Task<List<BookDto>> GetAllByKeyWord(string keyWord)
+        public async Task<List<BookDto>> GetAllByKeyWord(string keyWord, int? categoryId)
         {
-            return await _bookRepository.GetAllByKeyWord(keyWord);
+            return await _bookRepository.GetAllByKeyWord(keyWord,categoryId);
         }
 
         public async Task<BookDto?> GetBookByIdAsync(int bookId)
