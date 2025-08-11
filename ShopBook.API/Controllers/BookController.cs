@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using ShopBook.API.Infrastructure.Core;
 using ShopBook.Data.Dto;
 using ShopBook.Data.Models;
@@ -42,6 +43,33 @@ namespace ShopBook.API.Controllers
             }
         }
 
+        public enum BookSortOption
+        {
+            /// <summary>
+            /// Mới nhất (mặc định tương đương với 0)
+            /// </summary>
+            Newest,
+
+            /// <summary>
+            /// Bán chạy nhất(1)
+            /// </summary>
+            BestSelling,
+
+            /// <summary>
+            /// Đánh giá cao nhất(2)
+            /// </summary>
+            HighestRated,
+
+            /// <summary>
+            /// Giá thấp đến cao(3)
+            /// </summary>
+            PriceLowToHigh,
+
+            /// <summary>
+            /// Giá cao đến thấp(4)
+            /// </summary>
+            PriceHighToLow
+        }
 
         /// <summary>
         /// lấy danh sách phân trang
@@ -51,17 +79,41 @@ namespace ShopBook.API.Controllers
         /// <param name="keyword"></param>
         /// <returns></returns>
         [HttpGet("getallbypaging")]
-        public async Task<IActionResult> GetAllByPaging(int page = 0, int pageSize = 100, string? keyword = null)
+        public async Task<IActionResult> GetAllByPaging(
+            int page = 0,
+            int pageSize = 100,
+            string? keyword = null,
+            int? categoryId = null,
+            BookSortOption sortBy = BookSortOption.Newest)
         {
             try
             {
-                // Gọi service để lấy tất cả sách theo keyword (đã mapping sẵn BookDto)
-                var model = await _bookService.GetAllByKeyWord(keyword);
+                // Lấy danh sách sách đã mapping sẵn
+                var model = await _bookService.GetAllByKeyWord(keyword, categoryId);
 
                 int totalRow = model.Count();
 
+                // Áp dụng sắp xếp theo tiêu chí
+                model = sortBy switch
+                {
+                    BookSortOption.BestSelling =>
+                        model.OrderByDescending(x => x.QuantitySold?.Value ?? 0).ToList(),
+
+                    BookSortOption.HighestRated =>
+                        model.OrderByDescending(x => x.RatingAverage ?? 0).ToList(),
+
+                    BookSortOption.PriceLowToHigh =>
+                        model.OrderBy(x => x.OriginalPrice ?? decimal.MaxValue).ToList(),
+
+                    BookSortOption.PriceHighToLow =>
+                        model.OrderByDescending(x => x.OriginalPrice ?? decimal.MinValue).ToList(),
+
+                    _ => // Newest hoặc mặc định
+                        model.OrderByDescending(x => x.BookId).ToList()
+                };
+
+                // Phân trang
                 var data = model
-                    .OrderByDescending(x => x.BookId)
                     .Skip(page * pageSize)
                     .Take(pageSize)
                     .ToList();
@@ -85,8 +137,6 @@ namespace ShopBook.API.Controllers
                 });
             }
         }
-
-
 
         /// <summary>
         /// lấy theo id
