@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ShopBook.API.Infrastructure.Core;
 using ShopBook.Data.Models;
 using ShopBook.Data.ViewModels;
@@ -174,7 +175,49 @@ namespace ShopBook.API.Controllers
             }
         }
 
+        /// <summary>
+        /// xóa nhiều 
+        /// </summary>
+        /// <param name="checkedList"></param>
+        /// <returns></returns>
+        [HttpDelete("deletemulti")]
+        public async Task<IActionResult> DeleteMulti(string checkedList)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                try
+                {
+                    int countSuccess = 0;
+                    int countError = 0;
+                    List<int> result = new();
+                    List<int>? listItem = JsonConvert.DeserializeObject<List<int>>(checkedList);
+                    foreach (int item in listItem)
+                    {
+                        try
+                        {
+                            _ = await _bookSellerService.Delete(item);
+                            countSuccess++;
+                        }
+                        catch (Exception)
+                        {
+                            countError++;
+                        }
+                    }
+                    result.Add(countSuccess);
+                    result.Add(countError);
 
+                    return Ok(result);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+        }
         #endregion Properties
     }
 }
