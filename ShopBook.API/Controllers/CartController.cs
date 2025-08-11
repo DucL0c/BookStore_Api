@@ -71,7 +71,7 @@ namespace ShopBook.API.Controllers
 
                 var paging = new PaginationSet<Cart>
                 {
-                    Data = data,
+                    Items = data,
                     Page = page,
                     TotalCount = totalRow,
                     TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
