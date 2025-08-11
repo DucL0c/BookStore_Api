@@ -69,7 +69,7 @@ namespace ShopBook.API.Controllers
 
                 var paging = new PaginationSet<UserViewModels>()
                 {
-                    Items = mapping,
+                    Data = mapping,
                     Page = page,
                     TotalCount = totalRow,
                     TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
