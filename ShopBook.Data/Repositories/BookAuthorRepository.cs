@@ -15,6 +15,7 @@ namespace ShopBook.Data.Repositories
         Task<List<BookAuthor>> GetByBookIdAsync(int bookId);
         Task<List<BookAuthor>> GetBySellerIdAsync(int authorId);
         Task<List<BookAuthor>> GetAllAsync();
+        Task<List<BookAuthor>> GetAllByKeyWord(string keyWord);
     }
     public class BookAuthorRepository : RepositoryBase<BookAuthor>, IBookAuthorRepository
     {
@@ -30,6 +31,16 @@ namespace ShopBook.Data.Repositories
                 .Include(ba => ba.Author)
                 .ToListAsync();
         }
+
+        public async Task<List<BookAuthor>> GetAllByKeyWord(string keyWord)
+        {
+            return await _context.BookAuthors
+                .Where(ba => string.IsNullOrEmpty(keyWord) || ba.Book.Name.Contains(keyWord) || ba.Author.Name.Contains(keyWord))
+                .Include(ba => ba.Book)
+                .Include(ba => ba.Author)
+                .ToListAsync();
+        }
+
         public async Task<List<BookAuthor>> GetByBookIdAsync(int bookId)
         {
             return await _context.BookAuthors

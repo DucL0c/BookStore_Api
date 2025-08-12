@@ -14,6 +14,7 @@ namespace ShopBook.Data.Repositories
         Task<List<BookSpecification>> GetById(int Id);
         Task<List<BookSpecification>> GetByBookIdAsync(int bookId);
         Task<List<BookSpecification>> GetAllAsync();
+        Task<List<BookSpecification>> GetAllByKeyWord(string keyWord);
     }
 
     public class BookSpecificationRepository : RepositoryBase<BookSpecification>, IBookSpecificationRepository
@@ -27,6 +28,14 @@ namespace ShopBook.Data.Repositories
         public async Task<List<BookSpecification>> GetAllAsync()
         {
             return await _context.BookSpecifications
+                .Include(bs => bs.Book)
+                .ToListAsync();
+        }
+
+        public async Task<List<BookSpecification>> GetAllByKeyWord(string keyWord)
+        {
+            return await _context.BookSpecifications
+                .Where(bs => string.IsNullOrEmpty(keyWord) || bs.Book.Name.Contains(keyWord) || bs.Book.Description.Contains(keyWord))
                 .Include(bs => bs.Book)
                 .ToListAsync();
         }

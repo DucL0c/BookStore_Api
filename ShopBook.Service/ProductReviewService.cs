@@ -14,6 +14,7 @@ namespace ShopBook.Service
         Task<List<ProductReview>> GetByBookIdAsync(int bookId);
         Task<List<ProductReview>> GetByUserIdAsync(int userId);
         Task<List<ProductReview>> GetAllAsync();
+        Task<List<ProductReview>> GetAllByKeyWord(string keyWord);
         Task<ProductReview> Add(ProductReview productReview);
         Task<ProductReview> Update(ProductReview productReview);
         Task<ProductReview> Delete(int id);
@@ -37,6 +38,12 @@ namespace ShopBook.Service
         {
             return await _productReviewRepository.GetAllAsync();
         }
+
+        public async Task<List<ProductReview>> GetAllByKeyWord(string keyWord)
+        {
+           return await _productReviewRepository.GetAllByKeyWord(keyWord);
+        }
+
         public async Task<List<ProductReview>> GetByBookIdAsync(int bookId)
         {
             return await _productReviewRepository.GetByBookIdAsync(bookId);

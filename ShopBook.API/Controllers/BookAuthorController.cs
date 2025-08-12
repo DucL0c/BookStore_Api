@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using ShopBook.API.Infrastructure.Core;
 using ShopBook.Data.Models;
 using ShopBook.Data.ViewModels;
 using ShopBook.Service;
@@ -36,6 +37,43 @@ namespace ShopBook.API.Controllers
                 return NotFound(new { message = "Không có bản ghi bookAuthor nào." });
 
             return Ok(result);
+        }
+
+        /// <summary>
+        /// lấy danh sách phân trang
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="keyword"></param>
+        /// <returns></returns>
+        [HttpGet("getallbypaging")]
+        public async Task<IActionResult> GetAllByPaging(int page = 0, int pageSize = 100, string? keyword = null)
+        {
+            try
+            {
+                var model = await _bookAuthorService.GetAllByKeyWord(keyword);
+                int totalRow = model.Count();
+
+                var data = model
+                    .OrderByDescending(x => x.Id)
+                    .Skip(page * pageSize)
+                    .Take(pageSize)
+                    .ToList(); // Trả thẳng 
+
+                var paging = new PaginationSet<BookAuthor>
+                {
+                    Items = data,
+                    Page = page,
+                    TotalCount = totalRow,
+                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+
+                return Ok(paging);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>

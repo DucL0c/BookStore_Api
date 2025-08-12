@@ -13,6 +13,7 @@ namespace ShopBook.Service
         Task<List<BookSpecification>> GetById(int Id);
         Task<List<BookSpecification>> GetByBookIdAsync(int bookId);
         Task<List<BookSpecification>> GetAllAsync();
+        Task<List<BookSpecification>> GetAllByKeyWord(string keyWord);
         Task<BookSpecification> Add(BookSpecification specification);
         Task<BookSpecification> Update(BookSpecification specification);
         Task<BookSpecification> Delete(int id);
@@ -36,6 +37,12 @@ namespace ShopBook.Service
         {
             return await _bookSpecificationRepository.GetAllAsync();
         }
+
+        public async Task<List<BookSpecification>> GetAllByKeyWord(string keyWord)
+        {
+           return await _bookSpecificationRepository.GetAllByKeyWord(keyWord);
+        }
+
         public async Task<List<BookSpecification>> GetByBookIdAsync(int bookId)
         {
             return await _bookSpecificationRepository.GetByBookIdAsync(bookId);

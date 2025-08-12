@@ -67,7 +67,7 @@ namespace ShopBook.API.Controllers
                     .OrderByDescending(x => x.CartId)
                     .Skip(page * pageSize)
                     .Take(pageSize)
-                    .ToList(); // Trả thẳng Order
+                    .ToList(); // Trả thẳng 
 
                 var paging = new PaginationSet<Cart>
                 {

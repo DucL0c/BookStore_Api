@@ -11,6 +11,7 @@ namespace ShopBook.Service
     public interface IBookImageService 
     {
         Task<IQueryable<BookImage>> GetAll();
+        Task<List<BookImage>> GetAllByKeyWord(string keyword);
 
         Task<BookImage> GetById(int id);
 
@@ -40,6 +41,11 @@ namespace ShopBook.Service
         public async Task<IQueryable<BookImage>> GetAll()
         {
             return await _bookImageRepository.GetAllAsync();
+        }
+
+        public async Task<List<BookImage>> GetAllByKeyWord(string keyword)
+        {
+            return await _bookImageRepository.GetAllByKeyWord(keyword);
         }
 
         public async Task<BookImage> GetById(int id)

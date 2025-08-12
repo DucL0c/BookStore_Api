@@ -15,6 +15,7 @@ namespace ShopBook.Data.Repositories
         Task<List<ProductReview>> GetByBookIdAsync(int bookId);
         Task<List<ProductReview>> GetByUserIdAsync(int userId);
         Task<List<ProductReview>> GetAllAsync();
+        Task<List<ProductReview>> GetAllByKeyWord(string keyWord);
     }
     public class ProductReviewRepository : RepositoryBase<ProductReview>, IProductReviewRepository
     {
@@ -30,6 +31,21 @@ namespace ShopBook.Data.Repositories
                 .Include(pr => pr.User)
                 .ToListAsync();
         }
+
+        public Task<List<ProductReview>> GetAllByKeyWord(string keyWord)
+        {
+            return _context.ProductReviews
+                .Where(pr => string.IsNullOrEmpty(keyWord) 
+                || pr.Book.Name.Contains(keyWord) 
+                || pr.Book.Description.Contains(keyWord) 
+                || pr.Book.ShortDescription.Contains(keyWord) 
+                || pr.User.NickName.Contains(keyWord)
+                || pr.User.Email.Contains(keyWord))
+                .Include(pr => pr.Book)
+                .Include(pr => pr.User)
+                .ToListAsync();
+        }
+
         public async Task<List<ProductReview>> GetByBookIdAsync(int bookId)
         {
             return await _context.ProductReviews
