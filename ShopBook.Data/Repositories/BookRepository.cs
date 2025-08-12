@@ -69,7 +69,8 @@ namespace ShopBook.Data.Repositories
                     {
                         Id = s.Id,
                         SpecName = s.SpecName,
-                        SpecValue = s.SpecValue
+                        SpecValue = s.SpecValue,
+                        SpecCode = s.SpecCode
                     }).ToList(),
 
                     BookImages = b.BookImages.Select(i => new BookImageDto
@@ -186,7 +187,8 @@ namespace ShopBook.Data.Repositories
                     {
                         Id = s.Id,
                         SpecName = s.SpecName,
-                        SpecValue = s.SpecValue
+                        SpecValue = s.SpecValue,
+                        SpecCode = s.SpecCode
                     }).ToList(),
 
                     BookImages = b.BookImages.Select(i => new BookImageDto
@@ -297,7 +299,8 @@ namespace ShopBook.Data.Repositories
                 {
                     Id = s.Id,
                     SpecName = s.SpecName,
-                    SpecValue = s.SpecValue
+                    SpecValue = s.SpecValue,
+                    SpecCode = s.SpecCode
                 }).ToList(),
 
                 BookImages = book.BookImages.Select(i => new BookImageDto

@@ -14,5 +14,6 @@ namespace ShopBook.Data.ViewModels
         public string SpecName { get; set; } = null!;
 
         public string? SpecValue { get; set; }
+        public string SpecCode { get; set; } = null!;
     }
 }

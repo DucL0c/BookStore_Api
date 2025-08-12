@@ -127,6 +127,7 @@ public partial class BookstoreContext : DbContext
 
             entity.Property(e => e.SpecName).HasMaxLength(255);
             entity.Property(e => e.SpecValue).HasMaxLength(255);
+            entity.Property(e => e.SpecCode).HasMaxLength(255);
 
             entity.HasOne(d => d.Book).WithMany(p => p.BookSpecifications)
                 .HasForeignKey(d => d.BookId)

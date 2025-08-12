@@ -13,5 +13,6 @@ namespace ShopBook.Data.Dto
         public string SpecName { get; set; } = null!;
 
         public string? SpecValue { get; set; }
+        public string SpecCode { get; set; } = null!;
     }
 }

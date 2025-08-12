@@ -12,5 +12,7 @@ public partial class BookSpecification
 
     public string? SpecValue { get; set; }
 
+    public string SpecCode { get; set; } = null!;
+
     public virtual Book Book { get; set; } = null!;
 }

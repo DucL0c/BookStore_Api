@@ -11,6 +11,7 @@ namespace ShopBook.Service
     public interface IBookSellerService
     {
         Task<List<BookSeller>> GetAllAsync();
+        Task<List<BookSeller>> GetAllByKeyWord(string keyword);
         Task<List<BookSeller>> GetByBookIdAsync(int bookId);
         Task<List<BookSeller>> GetBySellerIdAsync(int sellerId);
         Task<BookSeller> Add(BookSeller bookSeller);
@@ -39,6 +40,11 @@ namespace ShopBook.Service
         public async Task<List<BookSeller>> GetAllAsync()
         {
             return await _bookSellerRepository.GetAllAsync();
+        }
+
+        public async Task<List<BookSeller>> GetAllByKeyWord(string keyword)
+        {
+           return await _bookSellerRepository.GetAllByKeyWord(keyword);
         }
 
         public async Task<List<BookSeller>> GetByBookIdAsync(int bookId)
