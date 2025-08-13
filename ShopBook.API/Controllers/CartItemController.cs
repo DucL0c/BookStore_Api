@@ -106,23 +106,17 @@ namespace ShopBook.API.Controllers
         }
 
         /// <summary>
-        /// lấy theo bookId
+        /// lấy theo userId
         /// </summary>
-        /// <param name="bookId"></param>
+        /// <param name="userId"></param>
         /// <returns></returns>
-        [HttpGet("byUserId/{bookId}")]
+        [HttpGet("byUserId/{userId}")]
         [Authorize(Roles = "user,admin")]
 
-        public async Task<IActionResult> GetByBookId(int bookId)
+        public async Task<IActionResult> GetByUserAsync(int userId)
         {
-            var result = await _cartItemService.GetByBookAsync(bookId);
-
-            if (result == null || result.Count == 0)
-            {
-                return NotFound(new { message = "Không tìm thấy bản ghi nào của BookId đã cho." });
-            }
-
-            return Ok(result);
+            var result = await _cartItemService.GetByUserAsync(userId);
+            return Ok(result ?? new List<CartItem>());
         }
 
         /// <summary>

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ShopBook.API.Infrastructure.Core;
+using ShopBook.Data.Dto;
 using ShopBook.Data.Models;
 using ShopBook.Data.ViewModels;
 using ShopBook.Service;
@@ -134,19 +135,25 @@ namespace ShopBook.API.Controllers
         [HttpPost("create")]
         [Authorize(Roles = "user,admin")]
 
-        public async Task<IActionResult> Create(OrderViewModels order)
+        public async Task<IActionResult> Create([FromBody] CreateOrderDto request)
         {
             if (ModelState.IsValid)
             {
-                Order us = _mapper.Map<OrderViewModels, Order>(order);
                 try
                 {
-                    _ = await _orderService.Add(us);
-                    return CreatedAtAction(nameof(Create), new { id = us.OrderId }, us);
+                    var order = await _orderService.CreateOrderAsync(
+                    request.UserId,
+                    request.PaymentMethod,
+                    request.ShippingAddress);
+                    return CreatedAtAction(nameof(Create), new { id = order.OrderId }, order);
                 }
-                catch (Exception ex)
+                catch (ArgumentException ex)
                 {
-                    return BadRequest(ex);
+                    return BadRequest(new { message = ex.Message });
+                }
+                catch (InvalidOperationException ex)
+                {
+                    return BadRequest(new { message = ex.Message });
                 }
             }
             else

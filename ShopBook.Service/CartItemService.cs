@@ -12,7 +12,7 @@ namespace ShopBook.Service
     {
         Task<List<CartItem>> GetById(int Id);
         Task<List<CartItem>> GetByCartIdAsync(int userId);
-        Task<List<CartItem>> GetByBookAsync(int userId);
+        Task<List<CartItem>> GetByUserAsync(int userId);
         Task<List<CartItem>> GetAllByKeyWord(string keyWord);
         Task<List<CartItem>> GetAllAsync();
         Task<CartItem> Add(CartItem cartItem);
@@ -34,9 +34,9 @@ namespace ShopBook.Service
         {
             return await _cartItemRepository.GetByCartIdAsync(userId);
         }
-        public async Task<List<CartItem>> GetByBookAsync(int userId)
+        public async Task<List<CartItem>> GetByUserAsync(int userId)
         {
-            return await _cartItemRepository.GetByBookAsync(userId);
+            return await _cartItemRepository.GetByUserAsync(userId);
         }
         public async Task<List<CartItem>> GetAllByKeyWord(string keyWord)
         {

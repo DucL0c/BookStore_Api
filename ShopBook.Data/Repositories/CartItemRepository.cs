@@ -13,7 +13,7 @@ namespace ShopBook.Data.Repositories
     {
         Task<List<CartItem>> GetById(int Id);
         Task<List<CartItem>> GetByCartIdAsync(int userId);
-        Task<List<CartItem>> GetByBookAsync(int userId);
+        Task<List<CartItem>> GetByUserAsync(int userId);
         Task<List<CartItem>> GetAllByKeyWord(string keyWord);
         Task<List<CartItem>> GetAllAsync();
     }
@@ -32,10 +32,10 @@ namespace ShopBook.Data.Repositories
                 .Include(ci => ci.Book)
                 .ToListAsync();
         }
-        public async Task<List<CartItem>> GetByBookAsync(int bookId)
+        public async Task<List<CartItem>> GetByUserAsync(int userId)
         {
             return await _context.CartItems
-                .Where(ci => ci.BookId == bookId)
+                .Where(ci => ci.Cart.UserId == userId)
                 .Include(ci => ci.Cart)
                 .Include(ci => ci.Book)
                 .ToListAsync();

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ShopBook.API.Infrastructure.Core;
+using ShopBook.Data.Dto;
 using ShopBook.Data.Models;
 using ShopBook.Data.ViewModels;
 using ShopBook.Service;
@@ -131,14 +132,16 @@ namespace ShopBook.API.Controllers
         /// <returns></returns>
         [HttpPost("create")]
         [Authorize(Roles = "user,admin")]
-        public async Task<IActionResult> Create(CartViewModels cart)
+        public async Task<IActionResult> Create([FromBody] AddToCartDto request)
         {
             if (ModelState.IsValid)
             {
-                Cart us = _mapper.Map<CartViewModels, Cart>(cart);
                 try
                 {
-                    _ = await _cartService.Add(us);
+                    if (request.Quantity <= 0)
+                        return BadRequest("Quantity must be greater than 0");
+
+                    Cart us = await _cartService.AddToCartAsync(request.UserId, request.BookId, request.Quantity);
                     return CreatedAtAction(nameof(Create), new { id = us.CartId }, us);
                 }
                 catch (Exception ex)

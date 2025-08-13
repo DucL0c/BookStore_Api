@@ -17,6 +17,7 @@ namespace ShopBook.Service
         Task<Cart> Add(Cart cart);
         Task<Cart> Update(Cart cart);
         Task<Cart> Delete(int id);
+        Task<Cart> AddToCartAsync(int userId, int bookId, int quantity);
 
     }
     public class CartService : ICartService
@@ -53,6 +54,11 @@ namespace ShopBook.Service
         public async Task<List<Cart>> GetAllAsync()
         {
             return await _cartRepository.GetAllAsync();
+        }
+
+        public async Task<Cart> AddToCartAsync(int userId, int bookId, int quantity)
+        {
+            return await _cartRepository.AddToCartAsync(userId, bookId, quantity);
         }
     }
 }

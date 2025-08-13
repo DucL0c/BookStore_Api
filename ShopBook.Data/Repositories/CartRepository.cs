@@ -16,6 +16,8 @@ namespace ShopBook.Data.Repositories
         Task<List<Cart>> GetAllByKeyWord(string keyWord);
         Task<List<Cart>> GetAllAsync();
 
+        Task<Cart> AddToCartAsync(int userId, int bookId, int quantity);
+
     }
     public class CartRepository : RepositoryBase <Cart> , ICartRepository
     {
@@ -60,6 +62,47 @@ namespace ShopBook.Data.Repositories
                .Include(c => c.CartItems)
                .ThenInclude(ci => ci.Book) // Include Book trong CartItem
                .ToListAsync();
+        }
+
+        public async Task<Cart> AddToCartAsync(int userId, int bookId, int quantity)
+        {
+            var book = await _context.Books.FindAsync(bookId);
+            if (book == null) throw new Exception("Book not found");
+
+            // Retrieve the user's cart
+            var cart = await _context.Carts
+                .Include(c => c.CartItems)
+                .FirstOrDefaultAsync(c => c.UserId == userId);
+
+            if (cart == null)
+            {
+                cart = new Cart
+                {
+                    UserId = userId,
+                    CreatedAt = DateTime.UtcNow
+                };
+                _context.Carts.Add(cart);
+            }
+
+            // Check if the item already exists
+            var existingItem = cart.CartItems.FirstOrDefault(ci => ci.BookId == bookId);
+            if (existingItem != null)
+            {
+                existingItem.Quantity += quantity;
+                existingItem.Price = existingItem.Quantity * book.ListPrice;
+            }
+            else
+            {
+                cart.CartItems.Add(new CartItem
+                {
+                    BookId = bookId,
+                    Quantity = quantity,
+                    Price = book.ListPrice * quantity
+                });
+            }
+
+            await _context.SaveChangesAsync(); // Save changes to the database
+            return cart; // Return the updated cart
         }
     }
 }
