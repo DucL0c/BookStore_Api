@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopBook.Data.Dto;
 using ShopBook.Data.Infrastructure;
 using ShopBook.Data.Models;
+using ShopBook.Model.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +13,10 @@ namespace ShopBook.Data.Repositories
 {
     public interface IOrderRepository : IRepository<Order>
     {
-        Task<List<Order>> GetById(int Id);
-        Task<List<Order>> GetByUserIdAsync(int userId);
-        Task<List<Order>> GetAllAsyncByKeyWord(string keyWord);
-        Task<List<Order>> GetAllAsync();
+        Task<List<OrderDetailDto>> GetById(int Id);
+        Task<List<OrderDetailDto>> GetByUserIdAsync(int userId);
+        Task<List<OrderDetailDto>> GetAllAsyncByKeyWord(string keyWord);
+        Task<List<OrderDetailDto>> GetAllAsync();
         Task<Order> CreateOrderAsync(int userId, string shippingAddress, string paymentMethod);
     }
     public class OrderRepository : RepositoryBase<Order>, IOrderRepository
@@ -24,7 +26,7 @@ namespace ShopBook.Data.Repositories
         {
             _context = context;
         }
-        public async Task<List<Order>> GetAllAsyncByKeyWord(string keyword)
+        public async Task<List<OrderDetailDto>> GetAllAsyncByKeyWord(string keyword)
         {
             var query = _context.Orders
                 .Include(o => o.User)
@@ -39,38 +41,166 @@ namespace ShopBook.Data.Repositories
                     o.User.Name.Contains(keyword) // Tìm theo tên người dùng
                 );
             }
-            return await query.ToListAsync();
+            var orders = await query.ToListAsync();
+
+            var result = orders.Select(o => new OrderDetailDto
+            {
+                OrderId = o.OrderId,
+                OrderDate = o.OrderDate,
+                TotalAmount = o.TotalAmount,
+                Status = o.Status,
+                ShippingAddress = o.ShippingAddress,
+                PaymentMethod = o.PaymentMethod,
+                User = o.User == null ? null : new UsersDto
+                {
+                    UserId = o.User.UserId,
+                    Name = o.User.Name,
+                    Phone = o.User.Phone,
+                    Address = o.User.Address
+                },
+                OrderItems = o.OrderItems.Select(oi => new OrderItemDto
+                {
+                    OrderItemId = oi.OrderItemId,
+                    Quantity = oi.Quantity,
+                    Price = oi.Price,
+                    Book = oi.Book == null ? null : new BooksDto
+                    {
+                        BookId = oi.Book.BookId,
+                        Name = oi.Book.Name,
+                        Price = oi.Book.ListPrice,
+                    }
+                }).ToList()
+            }).ToList();
+
+            return result;
+
         }
 
-        public async Task<List<Order>> GetByUserIdAsync(int userId)
+        public async Task<List<OrderDetailDto>> GetByUserIdAsync(int userId)
         {
-            return await _context.Orders
+            var query = _context.Orders
                 .Where(o => o.UserId == userId)
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
-                .ThenInclude(o => o.Book)//book trong OrderItems
-                .OrderByDescending(o => o.OrderDate)
-                .ToListAsync();
+                .ThenInclude(o => o.Book)
+                .OrderByDescending(o => o.OrderDate);
+
+            var orders = await query.ToListAsync();
+
+            var result = orders.Select(o => new OrderDetailDto
+            {
+                OrderId = o.OrderId,
+                OrderDate = o.OrderDate,
+                TotalAmount = o.TotalAmount,
+                Status = o.Status,
+                ShippingAddress = o.ShippingAddress,
+                PaymentMethod = o.PaymentMethod,
+                User = o.User == null ? null : new UsersDto
+                {
+                    UserId = o.User.UserId,
+                    Name = o.User.Name,
+                    Phone = o.User.Phone,
+                    Address = o.User.Address
+                },
+                OrderItems = o.OrderItems.Select(oi => new OrderItemDto
+                {
+                    OrderItemId = oi.OrderItemId,
+                    Quantity = oi.Quantity,
+                    Price = oi.Price,
+                    Book = oi.Book == null ? null : new BooksDto
+                    {
+                        BookId = oi.Book.BookId,
+                        Name = oi.Book.Name,
+                        Price = oi.Book.ListPrice,
+                    }
+                }).ToList()
+            }).ToList();
+
+            return result;
         }
-        public async Task<List<Order>> GetById(int Id)
+        public async Task<List<OrderDetailDto>> GetById(int Id)
         {
-            return await _context.Orders
+            var query = _context.Orders
                 .Where(o => o.OrderId == Id)
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
-                .ThenInclude(o => o.Book)//book trong OrderItems
-                .OrderByDescending(o => o.OrderDate)
-                .ToListAsync();
+                .ThenInclude(o => o.Book)
+                .OrderByDescending(o => o.OrderDate);
+
+            var orders = await query.ToListAsync();
+
+            var result = orders.Select(o => new OrderDetailDto
+            {
+                OrderId = o.OrderId,
+                OrderDate = o.OrderDate,
+                TotalAmount = o.TotalAmount,
+                Status = o.Status,
+                ShippingAddress = o.ShippingAddress,
+                PaymentMethod = o.PaymentMethod,
+                User = o.User == null ? null : new UsersDto
+                {
+                    UserId = o.User.UserId,
+                    Name = o.User.Name,
+                    Phone = o.User.Phone,
+                    Address = o.User.Address
+                },
+                OrderItems = o.OrderItems.Select(oi => new OrderItemDto
+                {
+                    OrderItemId = oi.OrderItemId,
+                    Quantity = oi.Quantity,
+                    Price = oi.Price,
+                    Book = oi.Book == null ? null : new BooksDto
+                    {
+                        BookId = oi.Book.BookId,
+                        Name = oi.Book.Name,
+                        Price = oi.Book.ListPrice,
+                    }
+                }).ToList()
+            }).ToList();
+
+            return result;
         }
 
-        public async Task<List<Order>> GetAllAsync()
+        public async Task<List<OrderDetailDto>> GetAllAsync()
         {
-            return await _context.Orders
+            var query = _context.Orders
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
-                .ThenInclude(o => o.Book)//book trong OrderItems
-                .OrderByDescending(o => o.OrderDate)
-                .ToListAsync();
+                .ThenInclude(o => o.Book)
+                .OrderByDescending(o => o.OrderDate);
+
+            var orders = await query.ToListAsync();
+
+            var result = orders.Select(o => new OrderDetailDto
+            {
+                OrderId = o.OrderId,
+                OrderDate = o.OrderDate,
+                TotalAmount = o.TotalAmount,
+                Status = o.Status,
+                ShippingAddress = o.ShippingAddress,
+                PaymentMethod = o.PaymentMethod,
+                User = o.User == null ? null : new UsersDto
+                {
+                    UserId = o.User.UserId,
+                    Name = o.User.Name,
+                    Phone = o.User.Phone,
+                    Address = o.User.Address
+                },
+                OrderItems = o.OrderItems.Select(oi => new OrderItemDto
+                {
+                    OrderItemId = oi.OrderItemId,
+                    Quantity = oi.Quantity,
+                    Price = oi.Price,
+                    Book = oi.Book == null ? null : new BooksDto
+                    {
+                        BookId = oi.Book.BookId,
+                        Name = oi.Book.Name,
+                        Price = oi.Book.ListPrice,
+                    }
+                }).ToList()
+            }).ToList();
+
+            return result;
         }
 
         public async Task<Order> CreateOrderAsync(int userId, string shippingAddress, string paymentMethod)

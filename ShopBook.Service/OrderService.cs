@@ -1,4 +1,5 @@
-﻿using ShopBook.Data.Models;
+﻿using ShopBook.Data.Dto;
+using ShopBook.Data.Models;
 using ShopBook.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,10 @@ namespace ShopBook.Service
 {
     public interface IOrderService
     {
-        Task<List<Order>> GetById(int Id);
-        Task<List<Order>> GetByUserIdAsync(int userId);
-        Task<List<Order>> GetAllAsyncByKeyWord(string keyWord);
-        Task<List<Order>> GetAllAsync();
+        Task<List<OrderDetailDto>> GetById(int Id);
+        Task<List<OrderDetailDto>> GetByUserIdAsync(int userId);
+        Task<List<OrderDetailDto>> GetAllAsyncByKeyWord(string keyWord);
+        Task<List<OrderDetailDto>> GetAllAsync();
         Task<Order> Add(Order order);
         Task<Order> Update(Order order);
         Task<Order> Delete(int id);
@@ -35,15 +36,15 @@ namespace ShopBook.Service
         {
             return await _orderRepository.DeleteAsync(id);
         }
-        public async Task<List<Order>> GetAllAsyncByKeyWord(string keyWord)
+        public async Task<List<OrderDetailDto>> GetAllAsyncByKeyWord(string keyWord)
         {
             return await _orderRepository.GetAllAsyncByKeyWord(keyWord);
         }
-        public async Task<List<Order>> GetById(int Id)
+        public async Task<List<OrderDetailDto>> GetById(int Id)
         {
             return await _orderRepository.GetById(Id);
         }
-        public async Task<List<Order>> GetByUserIdAsync(int userId)
+        public async Task<List<OrderDetailDto>> GetByUserIdAsync(int userId)
         {
             return await _orderRepository.GetByUserIdAsync(userId);
         }
@@ -51,7 +52,7 @@ namespace ShopBook.Service
         {
             return await _orderRepository.UpdateASync(order);
         }
-        public async Task<List<Order>> GetAllAsync()
+        public async Task<List<OrderDetailDto>> GetAllAsync()
         {
             return await _orderRepository.GetAllAsync();
         }

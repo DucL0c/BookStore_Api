@@ -71,7 +71,7 @@ namespace ShopBook.API.Controllers
                     .Take(pageSize)
                     .ToList(); // Trả thẳng Order
 
-                var paging = new PaginationSet<Order>
+                var paging = new PaginationSet<OrderDetailDto>
                 {
                     Items = data,
                     Page = page,

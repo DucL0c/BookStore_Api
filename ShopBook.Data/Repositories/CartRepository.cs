@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopBook.Data.Dto;
 using ShopBook.Data.Infrastructure;
 using ShopBook.Data.Models;
 using System;
@@ -6,15 +7,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ShopBook.Data.Repositories
 {
     public interface ICartRepository : IRepository<Cart>
     {
-        Task<List<Cart>> GetById(int Id);
-        Task<List<Cart>> GetByUserIdAsync(int userId);
-        Task<List<Cart>> GetAllByKeyWord(string keyWord);
-        Task<List<Cart>> GetAllAsync();
+        Task<List<CartDetailDto>> GetById(int Id);
+        Task<List<CartDetailDto>> GetByUserIdAsync(int userId);
+        Task<List<CartDetailDto>> GetAllByKeyWord(string keyWord);
+        Task<List<CartDetailDto>> GetAllAsync();
 
         Task<Cart> AddToCartAsync(int userId, int bookId, int quantity);
 
@@ -26,42 +28,162 @@ namespace ShopBook.Data.Repositories
         {
             _context = context;
         }
-        public async Task<List<Cart>> GetByUserIdAsync(int userId)
+        public async Task<List<CartDetailDto>> GetByUserIdAsync(int userId)
         {
-            return await _context.Carts
+            var query = _context.Carts
                 .Where(c => c.UserId == userId)
                 .Include(c => c.User)
                 .Include(c => c.CartItems)
-                    .ThenInclude(ci => ci.Book) // Include Book trong CartItem
-                .ToListAsync();
+                    .ThenInclude(ci => ci.Book);
+
+            var carts = await query.ToListAsync();
+
+            var result = carts.Select(c => new CartDetailDto
+            {
+                CartId = c.CartId,
+                UserId = c.UserId,
+                CreatedAt = c.CreatedAt,
+                CartItems = c.CartItems.Select(ct => new CartItemsDto
+                {
+                    CartItemId = ct.CartItemId,
+                    BookId = ct.BookId,
+                    Quantity = ct.Quantity,
+                    Price = ct.Price,
+                    Book = ct.Book == null ? null : new BookCartDto
+                    {
+                        BookId = ct.Book.BookId,
+                        Name = ct.Book.Name,
+                        Price = ct.Book.ListPrice,
+                    }
+                }).ToList(),
+                User = c.User == null ? null : new UserCartDto
+                {
+                    UserId = c.User.UserId,
+                    Name = c.User.Name,
+                    Phone = c.User.Phone,
+                    Address = c.User.Address
+                } 
+
+            }).ToList();
+            return result;
         }
-        public async Task<List<Cart>> GetAllByKeyWord(string keyWord)
+        public async Task<List<CartDetailDto>> GetAllByKeyWord(string keyWord)
         {
-            return await _context.Carts
+            var query = _context.Carts
                 .Where(c => string.IsNullOrEmpty(keyWord) || c.User.Name.ToString().Contains(keyWord) || c.User.Email.ToString().Contains(keyWord))
                 .Include(c => c.User)
                 .Include(c => c.CartItems)
-                .ThenInclude(ci => ci.Book) // Include Book trong CartItem
-                .ToListAsync();
+                .ThenInclude(ci => ci.Book);
+
+            var carts = await query.ToListAsync();
+
+            var result = carts.Select(c => new CartDetailDto
+            {
+                CartId = c.CartId,
+                UserId = c.UserId,
+                CreatedAt = c.CreatedAt,
+                CartItems = c.CartItems.Select(ct => new CartItemsDto
+                {
+                    CartItemId = ct.CartItemId,
+                    BookId = ct.BookId,
+                    Quantity = ct.Quantity,
+                    Price = ct.Price,
+                    Book = ct.Book == null ? null : new BookCartDto
+                    {
+                        BookId = ct.Book.BookId,
+                        Name = ct.Book.Name,
+                        Price = ct.Book.ListPrice,
+                    }
+                }).ToList(),
+                User = c.User == null ? null : new UserCartDto
+                {
+                    UserId = c.User.UserId,
+                    Name = c.User.Name,
+                    Phone = c.User.Phone,
+                    Address = c.User.Address
+                }
+
+            }).ToList();
+            return result;
         }
 
-        public async Task<List<Cart>> GetById(int Id)
+        public async Task<List<CartDetailDto>> GetById(int Id)
         {
-            return await _context.Carts
+            var query = _context.Carts
                 .Where(c => c.CartId == Id)
                 .Include(c => c.User)
                 .Include(c => c.CartItems)
-                .ThenInclude(ci => ci.Book) // Include Book trong CartItem
-                .ToListAsync();
+                .ThenInclude(ci => ci.Book);
+
+            var carts = await query.ToListAsync();
+
+            var result = carts.Select(c => new CartDetailDto
+            {
+                CartId = c.CartId,
+                UserId = c.UserId,
+                CreatedAt = c.CreatedAt,
+                CartItems = c.CartItems.Select(ct => new CartItemsDto
+                {
+                    CartItemId = ct.CartItemId,
+                    BookId = ct.BookId,
+                    Quantity = ct.Quantity,
+                    Price = ct.Price,
+                    Book = ct.Book == null ? null : new BookCartDto
+                    {
+                        BookId = ct.Book.BookId,
+                        Name = ct.Book.Name,
+                        Price = ct.Book.ListPrice,
+                    }
+                }).ToList(),
+                User = c.User == null ? null : new UserCartDto
+                {
+                    UserId = c.User.UserId,
+                    Name = c.User.Name,
+                    Phone = c.User.Phone,
+                    Address = c.User.Address
+                }
+
+            }).ToList();
+            return result;
         }
 
-        public async Task<List<Cart>> GetAllAsync()
+        public async Task<List<CartDetailDto>> GetAllAsync()
         {
-            return await _context.Carts
+            var query = _context.Carts
                .Include(c => c.User)
                .Include(c => c.CartItems)
-               .ThenInclude(ci => ci.Book) // Include Book trong CartItem
-               .ToListAsync();
+               .ThenInclude(ci => ci.Book);
+
+            var carts = await query.ToListAsync();
+
+            var result = carts.Select(c => new CartDetailDto
+            {
+                CartId = c.CartId,
+                UserId = c.UserId,
+                CreatedAt = c.CreatedAt,
+                CartItems = c.CartItems.Select(ct => new CartItemsDto
+                {
+                    CartItemId = ct.CartItemId,
+                    BookId = ct.BookId,
+                    Quantity = ct.Quantity,
+                    Price = ct.Price,
+                    Book = ct.Book == null ? null : new BookCartDto
+                    {
+                        BookId = ct.Book.BookId,
+                        Name = ct.Book.Name,
+                        Price = ct.Book.ListPrice,
+                    }
+                }).ToList(),
+                User = c.User == null ? null : new UserCartDto
+                {
+                    UserId = c.User.UserId,
+                    Name = c.User.Name,
+                    Phone = c.User.Phone,
+                    Address = c.User.Address
+                }
+
+            }).ToList();
+            return result;
         }
 
         public async Task<Cart> AddToCartAsync(int userId, int bookId, int quantity)
