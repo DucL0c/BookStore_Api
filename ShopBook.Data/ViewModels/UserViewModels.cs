@@ -10,13 +10,15 @@ namespace ShopBook.Data.ViewModels
     {
         public int UserId { get; set; }
 
-        public string? FullName { get; set; }
-
-        public string? NickName { get; set; }
+        public string? Name { get; set; }
 
         public string Email { get; set; } = null!;
 
-        public string PasswordHash { get; set; } = null!;
+        public string Password { get; set; } = null!;
+
+        public string? RefreshToken { get; set; }
+
+        public DateTime? ExpiryDate { get; set; }
 
         public string? Role { get; set; }
 

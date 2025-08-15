@@ -36,7 +36,7 @@ namespace ShopBook.Data.Repositories
             {
                 query = query.Where(o =>
                     o.ShippingAddress.Contains(keyword) ||
-                    o.User.FullName.Contains(keyword) // Tìm theo tên người dùng
+                    o.User.Name.Contains(keyword) // Tìm theo tên người dùng
                 );
             }
             return await query.ToListAsync();

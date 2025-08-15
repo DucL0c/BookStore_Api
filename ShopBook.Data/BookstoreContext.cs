@@ -246,10 +246,10 @@ public partial class BookstoreContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(255);
-            entity.Property(e => e.FullName).HasMaxLength(255);
+            entity.Property(e => e.Name).HasMaxLength(255);
             entity.Property(e => e.Gender).HasMaxLength(10);
-            entity.Property(e => e.NickName).HasMaxLength(100);
-            entity.Property(e => e.PasswordHash).HasMaxLength(255);
+            entity.Property(e => e.RefreshToken).HasMaxLength(100);
+            entity.Property(e => e.Password).HasMaxLength(255);
             entity.Property(e => e.Phone).HasMaxLength(20);
             entity.Property(e => e.Role)
                 .HasMaxLength(50)

@@ -38,7 +38,7 @@ namespace ShopBook.Data.Repositories
         public async Task<List<Cart>> GetAllByKeyWord(string keyWord)
         {
             return await _context.Carts
-                .Where(c => string.IsNullOrEmpty(keyWord) || c.User.FullName.ToString().Contains(keyWord) || c.User.Email.ToString().Contains(keyWord))
+                .Where(c => string.IsNullOrEmpty(keyWord) || c.User.Name.ToString().Contains(keyWord) || c.User.Email.ToString().Contains(keyWord))
                 .Include(c => c.User)
                 .Include(c => c.CartItems)
                 .ThenInclude(ci => ci.Book) // Include Book trong CartItem

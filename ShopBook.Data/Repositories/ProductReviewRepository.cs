@@ -39,7 +39,7 @@ namespace ShopBook.Data.Repositories
                 || pr.Book.Name.Contains(keyWord) 
                 || pr.Book.Description.Contains(keyWord) 
                 || pr.Book.ShortDescription.Contains(keyWord) 
-                || pr.User.NickName.Contains(keyWord)
+                || pr.User.Name.Contains(keyWord)
                 || pr.User.Email.Contains(keyWord))
                 .Include(pr => pr.Book)
                 .Include(pr => pr.User)

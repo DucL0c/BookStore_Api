@@ -126,7 +126,7 @@ namespace ShopBook.API.Controllers
             {
                 User us = _mapper.Map<UserViewModels, User>(user);
                 us.CreatedAt = DateTime.Now;
-                us.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
+                us.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
                 try
                 {
                     _ = await _usersService.Add(us);
@@ -155,7 +155,7 @@ namespace ShopBook.API.Controllers
             if (ModelState.IsValid)
             {
                 User mapping = _mapper.Map<UserViewModels, User>(user);
-                mapping.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
+                mapping.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
                 try
                 {
                     _ = await _usersService.Update(mapping);

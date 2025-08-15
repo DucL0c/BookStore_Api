@@ -12,6 +12,7 @@ namespace ShopBook.API.Infrastructure.Extentsions
         {
             CreateMap<User, RegisterDto>().ReverseMap();
             CreateMap<User, UserDto>();
+            CreateMap<User, UserLoginDto>().ReverseMap();
             CreateMap<User, UserViewModels>()
              .ReverseMap();
             CreateMap<Author, AuthorViewModels>()

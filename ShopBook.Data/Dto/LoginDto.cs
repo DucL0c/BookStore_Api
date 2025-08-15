@@ -14,8 +14,21 @@ namespace ShopBook.Data.Dto
     }
     public class LoginResultDto
     {
-        public string? Token { get; set; }
+        public string? AccessToken { get; set; }
+        public string? RefreshToken { get; set; }
         public int ExpiresIn { get; set; }
-        public UserDto? User { get; set; }
+        public UserLoginDto? User { get; set; }
     }
+
+    public class UserLoginDto
+    {
+        public int UserId { get; set; }
+
+        public string? Name { get; set; }
+
+        public string Email { get; set; } = null!;
+
+        public string? Role { get; set; }
+    }
+
 }

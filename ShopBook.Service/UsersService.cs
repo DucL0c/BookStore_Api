@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using ShopBook.Common.Exceptions;
@@ -8,6 +9,7 @@ using ShopBook.Data.Repositories;
 using ShopBook.Model.Dtos;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace ShopBook.Service
@@ -28,6 +30,10 @@ namespace ShopBook.Service
 
         Task<string> RegisterAsync(RegisterDto dto);
         Task<LoginResultDto> LoginAsync(LoginDto dto);
+
+        Task<RefreshTokenResponseDto> RefreshTokenAsync(string refreshToken);
+
+        Task LogoutAsync(int userId);
 
     }
     public class UsersService : IUsersService
@@ -57,7 +63,7 @@ namespace ShopBook.Service
         public async Task<IQueryable<User>> GetAll(string keyword)
         {
             if (!string.IsNullOrEmpty(keyword))
-                return await _usersRepository.GetAllAsync(x => x.FullName.ToUpper().Contains(keyword.ToUpper()) || x.NickName.ToUpper().Contains(keyword.ToUpper()) || x.Email.ToUpper().Contains(keyword.ToUpper()));
+                return await _usersRepository.GetAllAsync(x => x.Name.ToUpper().Contains(keyword.ToUpper()) || x.Email.ToUpper().Contains(keyword.ToUpper()));
             else
                 return await _usersRepository.GetAllAsync();
         }
@@ -72,6 +78,13 @@ namespace ShopBook.Service
             return await _usersRepository.GetByIdAsync(id);
         }
 
+        public async Task<User> Update(User user)
+        {
+            if (await _usersRepository.CheckContainsAsync(x => x.Email == user.Email && x.UserId != user.UserId))
+                throw new NameDuplicatedException("Email đã được sử dụng");
+            return await _usersRepository.UpdateASync(user);
+        }
+
         public async Task<LoginResultDto> LoginAsync(LoginDto dto)
         {
 #pragma warning disable CS8604 // Possible null reference argument.
@@ -81,14 +94,23 @@ namespace ShopBook.Service
             {
                 throw new Exception("User not found");
             }
-            if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+            if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
             {
                 throw new Exception("Invalid password");
             }
+
+            var accessToken = GenerateJwt(user);
+            var refreshToken = GenerateRefreshToken();
+
+            user.RefreshToken = refreshToken;
+            user.ExpiryDate = DateTime.Now.AddDays(7);
+            await _usersRepository.UpdateASync(user);
+
             var result = new LoginResultDto
             {
-                Token = GenerateJwt(user),
-                User = _mapper.Map<UserDto>(user),
+                AccessToken = accessToken,
+                RefreshToken = refreshToken,
+                User = _mapper.Map<UserLoginDto>(user),
                 ExpiresIn = int.Parse(_config["Jwt:ExpireDays"] ?? "7") * 24 * 60 * 60
             };
             return result;
@@ -105,19 +127,13 @@ namespace ShopBook.Service
             }
 
             var newUser = _mapper.Map<User>(dto);
-            newUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.PasswordHash);
+            newUser.Password = BCrypt.Net.BCrypt.HashPassword(dto.Password);
             newUser.Role = "user";
 
             await _usersRepository.AddASync(newUser);
             return GenerateJwt(newUser);
         }
 
-        public async Task<User> Update(User user)
-        {
-            if (await _usersRepository.CheckContainsAsync(x => x.Email == user.Email && x.UserId != user.UserId))
-                throw new NameDuplicatedException("Email đã được sử dụng");
-            return await _usersRepository.UpdateASync(user);
-        }
 
         private string GenerateJwt(User user)
         {
@@ -146,6 +162,46 @@ namespace ShopBook.Service
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        private string GenerateRefreshToken()
+        {
+            var randomNumber = new byte[64];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randomNumber);
+            return Convert.ToBase64String(randomNumber);
+        }
+
+        public async Task<RefreshTokenResponseDto> RefreshTokenAsync(string refreshToken)
+        {
+            var user = await _usersRepository.GetUserByRefreshTokenAsync(refreshToken);
+            if (user == null || user.ExpiryDate <= DateTime.UtcNow)
+                throw new Exception("Invalid refresh token");
+
+            var newAccessToken = GenerateJwt(user);
+            var newRefreshToken = GenerateRefreshToken();
+
+            user.RefreshToken = newRefreshToken;
+            user.ExpiryDate = DateTime.Now.AddDays(7);
+            await _usersRepository.UpdateASync(user);
+
+            return new RefreshTokenResponseDto
+            {
+                AccessToken = newAccessToken,
+                RefreshToken = newRefreshToken
+            };
+        }
+
+        public async Task LogoutAsync(int userId)
+        {
+            var user = await _usersRepository.GetByIdAsync(userId);
+            if (user == null)
+                throw new Exception("User not found");
+
+            user.RefreshToken = null;
+            user.ExpiryDate = null;
+
+            await _usersRepository.UpdateASync(user);
         }
     }
 }

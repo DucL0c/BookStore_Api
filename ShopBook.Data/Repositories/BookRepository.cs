@@ -110,8 +110,7 @@ namespace ShopBook.Data.Repositories
                         User = new ReviewUserDto
                         {
                             UserId = r.User.UserId,
-                            FullName = r.User.FullName,
-                            NickName = r.User.NickName,
+                            Name = r.User.Name,
                             Email = r.User.Email,
                             Phone = r.User.Phone,
                             Address = r.User.Address,
@@ -228,8 +227,7 @@ namespace ShopBook.Data.Repositories
                         User = new ReviewUserDto
                         {
                             UserId = r.User.UserId,
-                            FullName = r.User.FullName,
-                            NickName = r.User.NickName,
+                            Name = r.User.Name,
                             Email = r.User.Email,
                             Phone = r.User.Phone,
                             Address = r.User.Address,
@@ -340,8 +338,7 @@ namespace ShopBook.Data.Repositories
                     User = new ReviewUserDto
                     {
                         UserId = r.User.UserId,
-                        FullName = r.User.FullName,
-                        NickName = r.User.NickName,
+                        Name = r.User.Name,
                         Email = r.User.Email,
                         Phone = r.User.Phone,
                         Address = r.User.Address,
