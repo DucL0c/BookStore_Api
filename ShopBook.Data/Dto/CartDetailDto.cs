@@ -45,5 +45,53 @@ namespace ShopBook.Data.Dto
         public int BookId { get; set; }
         public string? Name { get; set; }
         public decimal? Price { get; set; }
+        public virtual ICollection<BookSellerCartDto> BookSellers { get; set; } = new List<BookSellerCartDto>();
+
+        public virtual ICollection<BookImageCartDto> BookImages { get; set; } = new List<BookImageCartDto>();
+    }
+
+    public class BookSellerCartDto
+    {
+        public int Id { get; set; }
+
+        public string? Sku { get; set; }
+
+        public decimal? Price { get; set; }
+
+        public string? ProductId { get; set; }
+
+        public int? StoreId { get; set; }
+
+        public bool? IsBestStore { get; set; }
+        public SellerCartDto? Seller { get; set; }
+    }
+
+    public class SellerCartDto
+    {
+        public int SellerId { get; set; }
+
+        public string? Name { get; set; }
+
+        public string? Link { get; set; }
+
+        public string? Logo { get; set; }
+
+    }
+
+    public class BookImageCartDto
+    {
+        public int ImageId { get; set; }
+
+        public string? BaseUrl { get; set; }
+
+        public string? SmallUrl { get; set; }
+
+        public string? MediumUrl { get; set; }
+
+        public string? LargeUrl { get; set; }
+
+        public string? ThumbnailUrl { get; set; }
+
+        public bool? IsGallery { get; set; }
     }
 }

@@ -42,10 +42,10 @@ public partial class BookstoreContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //    => optionsBuilder.UseSqlServer("Server=192.168.10.169;Database=bookstore;User ID=sa;Password=123456;TrustServerCertificate=True");
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=192.168.10.169;Database=bookstore;User ID=sa;Password=123456;TrustServerCertificate=True");
-    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //    => optionsBuilder.UseSqlServer("Server=DESKTOP-EU72BJ2\\SQLEXPRESS;Database=bookstore;User ID=sa;Password=123456;TrustServerCertificate=True");
+    => optionsBuilder.UseSqlServer("Server=DESKTOP-EU72BJ2\\SQLEXPRESS;Database=bookstore;User ID=sa;Password=123456;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

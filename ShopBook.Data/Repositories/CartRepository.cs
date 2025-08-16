@@ -33,8 +33,9 @@ namespace ShopBook.Data.Repositories
             var query = _context.Carts
                 .Where(c => c.UserId == userId)
                 .Include(c => c.User)
-                .Include(c => c.CartItems)
-                    .ThenInclude(ci => ci.Book);
+                .Include(c => c.CartItems).ThenInclude(ci => ci.Book).ThenInclude(b => b.BookSellers).ThenInclude(bs => bs.Seller)
+                .Include(c => c.CartItems).ThenInclude(ci => ci.Book).ThenInclude(b => b.BookImages);
+
 
             var carts = await query.ToListAsync();
 
@@ -54,6 +55,29 @@ namespace ShopBook.Data.Repositories
                         BookId = ct.Book.BookId,
                         Name = ct.Book.Name,
                         Price = ct.Book.ListPrice,
+                        BookSellers = ct.Book.BookSellers.Select(bs => new BookSellerCartDto
+                        {
+                            Id = bs.Id,
+                            Price = bs.Price,
+                            IsBestStore = bs.IsBestStore,
+                            Seller = new SellerCartDto
+                            {
+                                SellerId = bs.Seller.SellerId,
+                                Name = bs.Seller.Name,
+                                Link = bs.Seller.Link,
+                                Logo = bs.Seller.Logo
+                            }
+                        }).ToList(),
+                        BookImages = ct.Book.BookImages.Select(bi => new BookImageCartDto
+                        {
+                            ImageId = bi.ImageId,
+                            BaseUrl = bi.BaseUrl,
+                            SmallUrl = bi.SmallUrl,
+                            MediumUrl = bi.MediumUrl,
+                            LargeUrl = bi.LargeUrl,
+                            ThumbnailUrl = bi.ThumbnailUrl,
+                            IsGallery = bi.IsGallery
+                        }).ToList(),
                     }
                 }).ToList(),
                 User = c.User == null ? null : new UserCartDto
@@ -72,8 +96,8 @@ namespace ShopBook.Data.Repositories
             var query = _context.Carts
                 .Where(c => string.IsNullOrEmpty(keyWord) || c.User.Name.ToString().Contains(keyWord) || c.User.Email.ToString().Contains(keyWord))
                 .Include(c => c.User)
-                .Include(c => c.CartItems)
-                .ThenInclude(ci => ci.Book);
+                .Include(c => c.CartItems).ThenInclude(ci => ci.Book).ThenInclude(b => b.BookSellers).ThenInclude(bs => bs.Seller)
+                .Include(c => c.CartItems).ThenInclude(ci => ci.Book).ThenInclude(b => b.BookImages);
 
             var carts = await query.ToListAsync();
 
@@ -93,6 +117,29 @@ namespace ShopBook.Data.Repositories
                         BookId = ct.Book.BookId,
                         Name = ct.Book.Name,
                         Price = ct.Book.ListPrice,
+                        BookSellers = ct.Book.BookSellers.Select(bs => new BookSellerCartDto
+                        {
+                            Id = bs.Id,
+                            Price = bs.Price,
+                            IsBestStore = bs.IsBestStore,
+                            Seller = new SellerCartDto
+                            {
+                                SellerId = bs.Seller.SellerId,
+                                Name = bs.Seller.Name,
+                                Link = bs.Seller.Link,
+                                Logo = bs.Seller.Logo
+                            }
+                        }).ToList(),
+                        BookImages = ct.Book.BookImages.Select(bi => new BookImageCartDto
+                        {
+                            ImageId = bi.ImageId,
+                            BaseUrl = bi.BaseUrl,
+                            SmallUrl = bi.SmallUrl,
+                            MediumUrl = bi.MediumUrl,
+                            LargeUrl = bi.LargeUrl,
+                            ThumbnailUrl = bi.ThumbnailUrl,
+                            IsGallery = bi.IsGallery
+                        }).ToList(),
                     }
                 }).ToList(),
                 User = c.User == null ? null : new UserCartDto
@@ -112,8 +159,8 @@ namespace ShopBook.Data.Repositories
             var query = _context.Carts
                 .Where(c => c.CartId == Id)
                 .Include(c => c.User)
-                .Include(c => c.CartItems)
-                .ThenInclude(ci => ci.Book);
+                .Include(c => c.CartItems).ThenInclude(ci => ci.Book).ThenInclude(b => b.BookSellers).ThenInclude(bs => bs.Seller)
+                .Include(c => c.CartItems).ThenInclude(ci => ci.Book).ThenInclude(b => b.BookImages);
 
             var carts = await query.ToListAsync();
 
@@ -133,6 +180,29 @@ namespace ShopBook.Data.Repositories
                         BookId = ct.Book.BookId,
                         Name = ct.Book.Name,
                         Price = ct.Book.ListPrice,
+                        BookSellers = ct.Book.BookSellers.Select(bs => new BookSellerCartDto
+                        {
+                            Id = bs.Id,
+                            Price = bs.Price,
+                            IsBestStore = bs.IsBestStore,
+                            Seller = new SellerCartDto
+                            {
+                                SellerId = bs.Seller.SellerId,
+                                Name = bs.Seller.Name,
+                                Link = bs.Seller.Link,
+                                Logo = bs.Seller.Logo
+                            }
+                        }).ToList(),
+                        BookImages = ct.Book.BookImages.Select(bi => new BookImageCartDto
+                        {
+                            ImageId = bi.ImageId,
+                            BaseUrl = bi.BaseUrl,
+                            SmallUrl = bi.SmallUrl,
+                            MediumUrl = bi.MediumUrl,
+                            LargeUrl = bi.LargeUrl,
+                            ThumbnailUrl = bi.ThumbnailUrl,
+                            IsGallery = bi.IsGallery
+                        }).ToList(),
                     }
                 }).ToList(),
                 User = c.User == null ? null : new UserCartDto
@@ -151,8 +221,8 @@ namespace ShopBook.Data.Repositories
         {
             var query = _context.Carts
                .Include(c => c.User)
-               .Include(c => c.CartItems)
-               .ThenInclude(ci => ci.Book);
+               .Include(c => c.CartItems).ThenInclude(ci => ci.Book).ThenInclude(b => b.BookSellers).ThenInclude(bs => bs.Seller)
+               .Include(c => c.CartItems).ThenInclude(ci => ci.Book).ThenInclude(b => b.BookImages);
 
             var carts = await query.ToListAsync();
 
@@ -172,6 +242,29 @@ namespace ShopBook.Data.Repositories
                         BookId = ct.Book.BookId,
                         Name = ct.Book.Name,
                         Price = ct.Book.ListPrice,
+                        BookSellers = ct.Book.BookSellers.Select(bs => new BookSellerCartDto
+                        {
+                            Id = bs.Id,
+                            Price = bs.Price,
+                            IsBestStore = bs.IsBestStore,
+                            Seller = new SellerCartDto
+                            {
+                                SellerId = bs.Seller.SellerId,
+                                Name = bs.Seller.Name,
+                                Link = bs.Seller.Link,
+                                Logo = bs.Seller.Logo
+                            }
+                        }).ToList(),
+                        BookImages = ct.Book.BookImages.Select(bi => new BookImageCartDto
+                        {
+                            ImageId = bi.ImageId,
+                            BaseUrl = bi.BaseUrl,
+                            SmallUrl = bi.SmallUrl,
+                            MediumUrl = bi.MediumUrl,
+                            LargeUrl = bi.LargeUrl,
+                            ThumbnailUrl = bi.ThumbnailUrl,
+                            IsGallery = bi.IsGallery
+                        }).ToList(),
                     }
                 }).ToList(),
                 User = c.User == null ? null : new UserCartDto

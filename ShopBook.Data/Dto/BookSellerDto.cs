@@ -19,6 +19,6 @@ namespace ShopBook.Data.Dto
         public int? StoreId { get; set; }
 
         public bool? IsBestStore { get; set; }
-        public SellerDto Seller { get; set; }
+        public SellerDto? Seller { get; set; }
     }
 }
