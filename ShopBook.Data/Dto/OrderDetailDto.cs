@@ -41,5 +41,25 @@ namespace ShopBook.Data.Dto
         public int BookId { get; set; }
         public string? Name { get; set; }
         public decimal? Price { get; set; }
+
+        public virtual ICollection<BookImageOrderDto> BookImages { get; set; } = new List<BookImageOrderDto>();
+
+    }
+
+    public class BookImageOrderDto
+    {
+        public int ImageId { get; set; }
+
+        public string? BaseUrl { get; set; }
+
+        public string? SmallUrl { get; set; }
+
+        public string? MediumUrl { get; set; }
+
+        public string? LargeUrl { get; set; }
+
+        public string? ThumbnailUrl { get; set; }
+
+        public bool? IsGallery { get; set; }
     }
 }

@@ -30,8 +30,7 @@ namespace ShopBook.Data.Repositories
         {
             var query = _context.Orders
                 .Include(o => o.User)
-                .Include(o => o.OrderItems)
-                .ThenInclude(o=>o.Book)//book trong OrderItems
+                .Include(o => o.OrderItems).ThenInclude(o=>o.Book).ThenInclude(o=>o.BookImages)
                 .AsQueryable();
 
             if (!string.IsNullOrEmpty(keyword))
@@ -68,6 +67,15 @@ namespace ShopBook.Data.Repositories
                         BookId = oi.Book.BookId,
                         Name = oi.Book.Name,
                         Price = oi.Book.ListPrice,
+                        BookImages = oi.Book.BookImages.Select(bi => new BookImageOrderDto
+                        {
+                            ImageId = bi.ImageId,
+                            BaseUrl = bi.BaseUrl,
+                            SmallUrl = bi.SmallUrl,
+                            MediumUrl = bi.MediumUrl,
+                            LargeUrl = bi.LargeUrl,
+                            ThumbnailUrl = bi.LargeUrl
+                        }).ToList()
                     }
                 }).ToList()
             }).ToList();
@@ -83,6 +91,7 @@ namespace ShopBook.Data.Repositories
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
                 .ThenInclude(o => o.Book)
+                .ThenInclude(o => o.BookImages)
                 .OrderByDescending(o => o.OrderDate);
 
             var orders = await query.ToListAsync();
@@ -112,6 +121,15 @@ namespace ShopBook.Data.Repositories
                         BookId = oi.Book.BookId,
                         Name = oi.Book.Name,
                         Price = oi.Book.ListPrice,
+                        BookImages = oi.Book.BookImages.Select(bi => new BookImageOrderDto
+                        {
+                            ImageId = bi.ImageId,
+                            BaseUrl = bi.BaseUrl,
+                            SmallUrl = bi.SmallUrl,
+                            MediumUrl = bi.MediumUrl,
+                            LargeUrl = bi.LargeUrl,
+                            ThumbnailUrl = bi.LargeUrl
+                        }).ToList()
                     }
                 }).ToList()
             }).ToList();
@@ -125,6 +143,7 @@ namespace ShopBook.Data.Repositories
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
                 .ThenInclude(o => o.Book)
+                .ThenInclude(o => o.BookImages)
                 .OrderByDescending(o => o.OrderDate);
 
             var orders = await query.ToListAsync();
@@ -154,6 +173,15 @@ namespace ShopBook.Data.Repositories
                         BookId = oi.Book.BookId,
                         Name = oi.Book.Name,
                         Price = oi.Book.ListPrice,
+                        BookImages = oi.Book.BookImages.Select(bi => new BookImageOrderDto
+                        {
+                            ImageId = bi.ImageId,
+                            BaseUrl = bi.BaseUrl,
+                            SmallUrl = bi.SmallUrl,
+                            MediumUrl = bi.MediumUrl,
+                            LargeUrl = bi.LargeUrl,
+                            ThumbnailUrl = bi.LargeUrl
+                        }).ToList()
                     }
                 }).ToList()
             }).ToList();
@@ -167,6 +195,7 @@ namespace ShopBook.Data.Repositories
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
                 .ThenInclude(o => o.Book)
+                .ThenInclude(o => o.BookImages)
                 .OrderByDescending(o => o.OrderDate);
 
             var orders = await query.ToListAsync();
@@ -196,6 +225,15 @@ namespace ShopBook.Data.Repositories
                         BookId = oi.Book.BookId,
                         Name = oi.Book.Name,
                         Price = oi.Book.ListPrice,
+                        BookImages = oi.Book.BookImages.Select(bi => new BookImageOrderDto
+                        {
+                            ImageId = bi.ImageId,
+                            BaseUrl = bi.BaseUrl,
+                            SmallUrl = bi.SmallUrl,
+                            MediumUrl = bi.MediumUrl,
+                            LargeUrl = bi.LargeUrl,
+                            ThumbnailUrl = bi.LargeUrl
+                        }).ToList()
                     }
                 }).ToList()
             }).ToList();
