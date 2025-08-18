@@ -110,21 +110,40 @@ namespace ShopBook.API.Controllers
         /// <summary>
         /// lấy theo UserId
         /// </summary>
+        /// <param name="page"></param>
+        /// <param name="pageSize"></param>
         /// <param name="userId"></param>
         /// <returns></returns>
         [HttpGet("byUserId/{userId}")]
         [Authorize(Roles = "user,admin")]
-
-        public async Task<IActionResult> GetByUserId(int userId)
+        public async Task<IActionResult> GetByUserId(int userId, int page = 0, int pageSize = 100)
         {
-            var result = await _orderService.GetByUserIdAsync(userId);
-
-            if (result == null || result.Count == 0)
+            try
             {
-                return NotFound(new { message = "Không tìm thấy bản ghi nào của userId đã cho." });
-            }
+                var result = await _orderService.GetByUserIdAsync(userId);
 
-            return Ok(result);
+                int totalRow = result.Count();
+
+                var data = result
+                    .OrderByDescending(x => x.OrderId)
+                    .Skip(page * pageSize)
+                    .Take(pageSize)
+                    .ToList();
+
+                var paging = new PaginationSet<OrderDetailDto>
+                {
+                    Items = data,
+                    Page = page,
+                    TotalCount = totalRow,
+                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+
+                return Ok(paging);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>
