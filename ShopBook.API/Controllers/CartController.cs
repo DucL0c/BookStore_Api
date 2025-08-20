@@ -119,7 +119,7 @@ namespace ShopBook.API.Controllers
 
             if (result == null || result.Count == 0)
             {
-                return NotFound(new { message = "Không tìm thấy bản ghi nào của userId đã cho." });
+                return Ok(new { message = "Không tìm thấy bản ghi nào của userId đã cho." });
             }
 
             return Ok(result);

@@ -101,7 +101,7 @@ namespace ShopBook.API.Controllers
 
             if (result == null || result.Count == 0)
             {
-                return NotFound(new { message = "Không tìm thấy bản ghi nào của Id đã cho." });
+                return Ok(new { message = "Không tìm thấy bản ghi nào của Id đã cho." });
             }
 
             return Ok(result);
@@ -162,8 +162,8 @@ namespace ShopBook.API.Controllers
                 {
                     var order = await _orderService.CreateOrderAsync(
                     request.UserId,
-                    request.PaymentMethod,
-                    request.ShippingAddress);
+                    request.ShippingAddress,
+                    request.PaymentMethod);
                     return CreatedAtAction(nameof(Create), new { id = order.OrderId }, order);
                 }
                 catch (ArgumentException ex)

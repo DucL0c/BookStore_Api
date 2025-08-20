@@ -259,7 +259,7 @@ namespace ShopBook.Data.Repositories
                 UserId = userId,
                 OrderDate = DateTime.Now,
                 TotalAmount = totalAmount,
-                Status = "Pending",
+                Status = "pending",
                 ShippingAddress = shippingAddress,
                 PaymentMethod = paymentMethod
             };
