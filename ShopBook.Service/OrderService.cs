@@ -19,6 +19,7 @@ namespace ShopBook.Service
         Task<Order> Update(Order order);
         Task<Order> Delete(int id);
         Task<Order> CreateOrderAsync(int userId, string shippingAddress, string paymentMethod);
+        Task<Order> CreateOrderDirectAsync(int userId, int bookId, int quantity, string shippingAddress, string paymentMethod);
 
     }
     public class OrderService : IOrderService
@@ -66,6 +67,17 @@ namespace ShopBook.Service
                 throw new ArgumentException("ShippingAddress không được để trống.");
 
             return await _orderRepository.CreateOrderAsync(userId, shippingAddress, paymentMethod); 
+        }
+
+        public async Task<Order> CreateOrderDirectAsync(int userId, int bookId, int quantity, string shippingAddress, string paymentMethod)
+        {
+            if (string.IsNullOrWhiteSpace(paymentMethod))
+                throw new ArgumentException("PaymentMethod không được để trống.");
+
+            if (string.IsNullOrWhiteSpace(shippingAddress))
+                throw new ArgumentException("ShippingAddress không được để trống.");
+
+            return await _orderRepository.CreateOrderDirectAsync(userId,bookId, quantity, shippingAddress, paymentMethod);
         }
     }
 }

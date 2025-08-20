@@ -160,11 +160,28 @@ namespace ShopBook.API.Controllers
             {
                 try
                 {
-                    var order = await _orderService.CreateOrderAsync(
-                    request.UserId,
-                    request.ShippingAddress,
-                    request.PaymentMethod);
-                    return CreatedAtAction(nameof(Create), new { id = order.OrderId }, order);
+                    if(request.Typess == "buy_now")
+                    {
+                        var books = request.Items.First();
+                        var order = await _orderService.CreateOrderDirectAsync(
+                            request.UserId,
+                            books.BookId,
+                            books.Quantity,
+                            request.ShippingAddress,
+                            request.PaymentMethod
+                         );
+                        return CreatedAtAction(nameof(Create), new { id = order.OrderId }, order);
+                    }
+                    else
+                    {
+                        var order = await _orderService.CreateOrderAsync(
+                            request.UserId,
+                            request.ShippingAddress,
+                            request.PaymentMethod
+                         );
+                        return CreatedAtAction(nameof(Create), new { id = order.OrderId }, order);
+                    }
+                        
                 }
                 catch (ArgumentException ex)
                 {

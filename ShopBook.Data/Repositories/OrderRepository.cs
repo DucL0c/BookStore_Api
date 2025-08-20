@@ -18,6 +18,7 @@ namespace ShopBook.Data.Repositories
         Task<List<OrderDetailDto>> GetAllAsyncByKeyWord(string keyWord);
         Task<List<OrderDetailDto>> GetAllAsync();
         Task<Order> CreateOrderAsync(int userId, string shippingAddress, string paymentMethod);
+        Task<Order> CreateOrderDirectAsync(int userId, int bookId, int quantity, string shippingAddress, string paymentMethod);
     }
     public class OrderRepository : RepositoryBase<Order>, IOrderRepository
     {
@@ -283,6 +284,47 @@ namespace ShopBook.Data.Repositories
             // Xóa cart và cart items
             _context.CartItems.RemoveRange(cart.CartItems);
             _context.Carts.Remove(cart);
+
+            await _context.SaveChangesAsync();
+
+            return order;
+        }
+
+        public async Task<Order> CreateOrderDirectAsync(int userId, int bookId, int quantity, string shippingAddress, string paymentMethod)
+        {
+            var book = await _context.Books.FindAsync(bookId);
+            if (book == null)
+                throw new Exception("Sách không tồn tại");
+
+            if (quantity <= 0)
+                throw new Exception("Số lượng không hợp lệ");
+
+            // Tính tổng tiền
+            decimal totalAmount = (book.ListPrice ?? 0) * quantity;
+
+            // Tạo order
+            var order = new Order
+            {
+                UserId = userId,
+                OrderDate = DateTime.Now,
+                TotalAmount = totalAmount,
+                Status = "pending",
+                ShippingAddress = shippingAddress,
+                PaymentMethod = paymentMethod,
+            };
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            // Tạo order item
+            var orderItem = new OrderItem
+            {
+                OrderId = order.OrderId,
+                BookId = bookId,
+                Quantity = quantity,
+                Price = book.ListPrice
+            };
+            _context.OrderItems.Add(orderItem);
 
             await _context.SaveChangesAsync();
 
